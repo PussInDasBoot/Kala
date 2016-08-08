@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # Studios
 require_relative 'googlescrape'
+require_relative 'mind-body-scraper'
 require 'pry'
 
 
@@ -30,6 +31,21 @@ urlarray = ["https://www.google.ca/maps/place/STRETCH/@49.2815951,-123.1106868,1
 "https://www.google.ca/maps/place/Moksha+Yoga+East+Vancouver/@49.2624452,-123.1093269,15z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x85906c99ca87f176!8m2!3d49.2571867!4d-123.0925423", 
 yogacara, 
 "https://www.google.ca/maps/place/Bikram's+Yoga+College-India/@49.2777333,-123.0741363,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x9b805c913dbb2f5c!8m2!3d49.2746308!4d-123.0697663"]
+
+STRETCH_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=197938'
+ONE_YOGA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=31718'
+ONE_HOUR_HOT_YOGA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=177288'
+OXYGEN_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=230418'
+FORM_BODY_LAB_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=33473'
+DHARMA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=201653'
+WESTCOAST_HOT_YOGA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=474'
+CHOPRA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=18712'
+YOGA_WEST_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=14330'
+MOKSHA_YOGA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=5925'
+JUST_YOGA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=26705'
+MOKSHA_HOT_YOGA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=22597'
+YOGACARA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=184178'
+BIKRAM_YOGA_STUDIO_URL = 'https://clients.mindbodyonline.com/classic/home?studioid=617'
 
 t = MyCapybaraTest::Test.new
 urlarray.each do |url|
@@ -58,6 +74,13 @@ stretchprices.each do |stretchprice|
   price.save
 end
 
+stretch_yoga_classes = MindBodyScraper::YogaStudio.new.scrape(STRETCH_STUDIO_URL)
+stretch_yoga_classes.each do |stretch_yoga_class|
+  yoga_class = YogaClass.new(stretch_yoga_class)
+  yoga_class.studio = stretch
+  yoga_class.save
+end
+
 oneyoga = Studio.find_by(name: 'One Yoga For The People')
 oneyogaprices = [
   {category: 'single', num_classes: 1, duration: 1, price: 17},
@@ -69,6 +92,13 @@ oneyogaprices.each do |oneyogaprice|
   price = ClassPackage.new(oneyogaprice)
   price.studio_id = oneyoga.id
   price.save
+end
+
+one_yoga_classes = MindBodyScraper::YogaStudio.new.scrape(ONE_YOGA_STUDIO_URL)
+one_yoga_classes.each do |one_yoga_class|
+  yoga_class = YogaClass.new(one_yoga_class)
+  yoga_class.studio = oneyoga
+  yoga_class.save
 end
 
 chopra = Studio.find_by(name: 'Chopra Yoga Center')
@@ -84,6 +114,13 @@ chopraprices.each do |chopraprice|
   price.save
 end
 
+chopra_yoga_classes = MindBodyScraper::YogaStudio.new.scrape(CHOPRA_STUDIO_URL)
+chopra_yoga_classes.each do |chopra_yoga_class|
+  yoga_class = YogaClass.new(chopra_yoga_class)
+  yoga_class.studio = chopra
+  yoga_class.save
+end
+
 onehour = Studio.find_by(name: 'One Hour Hot Yoga')
 onehourprices = [
   {category: 'single', num_classes: 1, duration: 1, price: 15},
@@ -95,6 +132,13 @@ onehourprices.each do |onehourprice|
   price = ClassPackage.new(onehourprice)
   price.studio_id = onehour.id
   price.save
+end
+
+one_hour_classes = MindBodyScraper::YogaStudio.new.scrape(ONE_HOUR_HOT_YOGA_STUDIO_URL)
+one_hour_classes.each do |one_hour_class|
+  yoga_class = YogaClass.new(one_hour_class)
+  yoga_class.studio = onehour
+  yoga_class.save
 end
 
 oxygen = Studio.find_by(name: 'Oxygen Yoga & Fitness Yaletown')
@@ -113,6 +157,13 @@ oxygenprices.each do |oxygenprice|
   price.save
 end
 
+oxygen_classes = MindBodyScraper::YogaStudio.new.scrape(OXYGEN_STUDIO_URL)
+oxygen_classes.each do |oxygen_class|
+  yoga_class = YogaClass.new(oxygen_class)
+  yoga_class.studio = oxygen
+  yoga_class.save
+end
+
 formbody = Studio.find_by(name: 'Form Body Lab')
 formbodyprices = [
   {category: 'single', num_classes: 1, duration: 1, price: 23},
@@ -127,6 +178,13 @@ formbodyprices.each do |formbodyprice|
   price.save
 end
 
+form_body_classes = MindBodyScraper::YogaStudio.new.scrape(FORM_BODY_LAB_STUDIO_URL)
+form_body_classes.each do |form_body_class|
+  yoga_class = YogaClass.new(form_body_class)
+  yoga_class.studio = formbody
+  yoga_class.save
+end
+
 dharma = Studio.find_by(name: 'Dharma Yoga Vancouver')
 dharmaprices = [
   {category: 'single', num_classes: 1, duration: 1, price: 20},
@@ -139,6 +197,13 @@ dharmaprices.each do |dharmaprice|
   price = ClassPackage.new(dharmaprice)
   price.studio_id = dharma.id
   price.save
+end
+
+dharma_classes = MindBodyScraper::YogaStudio.new.scrape(DHARMA_STUDIO_URL)
+dharma_classes.each do |dharma_class|
+  yoga_class = YogaClass.new(dharma_class)
+  yoga_class.studio = dharma
+  yoga_class.save
 end
 
 westcoast = Studio.find_by(name: 'West Coast Hot Yoga')
@@ -156,6 +221,13 @@ westcoastprices.each do |westcoastprice|
   price.save
 end
 
+west_coast_classes = MindBodyScraper::YogaStudio.new.scrape(WESTCOAST_HOT_YOGA_STUDIO_URL)
+west_coast_classes.each do |west_coast_class|
+  yoga_class = YogaClass.new(west_coast_class)
+  yoga_class.studio = westcoast 
+  yoga_class.save
+end
+
 yogawest = Studio.find_by(name: 'Yoga West')
 yogawestprices = [
   {category: 'single', num_classes: 1, duration: 1, price: 18},
@@ -170,6 +242,13 @@ yogawestprices.each do |yogawestprice|
   price.save
 end
 
+yoga_west_classes = MindBodyScraper::YogaStudio.new.scrape(YOGA_WEST_STUDIO_URL)
+yoga_west_classes.each do |yoga_west_class|
+  yoga_class = YogaClass.new(yoga_west_class)
+  yoga_class.studio = yogawest
+  yoga_class.save
+end
+
 moksha = Studio.find_by(name: 'Moksha Yoga')
 mokshaprices = [
   {category: 'single', num_classes: 1, duration: 1, price: 20},
@@ -182,6 +261,13 @@ mokshaprices.each do |mokshaprice|
   price = ClassPackage.new(mokshaprice)
   price.studio_id = moksha.id
   price.save
+end
+
+moksha_classes = MindBodyScraper::YogaStudio.new.scrape(MOKSHA_YOGA_STUDIO_URL)
+moksha_classes.each do |moksha_class|
+  yoga_class = YogaClass.new(moksha_class)
+  yoga_class.studio = moksha
+  yoga_class.save
 end
 
 just = Studio.find_by(name: 'Just Yoga')
@@ -199,6 +285,13 @@ justprices.each do |justprice|
   price.save
 end
 
+just_yoga_classes = MindBodyScraper::YogaStudio.new.scrape(JUST_YOGA_STUDIO_URL)
+just_yoga_classes.each do |just_yoga_class|
+  yoga_class = YogaClass.new(just_yoga_class)
+  yoga_class.studio = just
+  yoga_class.save
+end
+
 mokshaeast = Studio.find_by(name: 'Moksha Yoga East Vancouver')
 mokshaeastprices = [
   {category: 'single', num_classes: 1, duration: 1, price: 20},
@@ -211,6 +304,13 @@ mokshaeastprices.each do |mokshaeastprice|
   price = ClassPackage.new(mokshaeastprice)
   price.studio_id = mokshaeast.id
   price.save
+end
+
+moksha_east_classes = MindBodyScraper::YogaStudio.new.scrape(MOKSHA_HOT_YOGA_STUDIO_URL)
+moksha_east_classes.each do |moksha_east_class|
+  yoga_class = YogaClass.new(moksha_east_class)
+  yoga_class.studio = mokshaeast
+  yoga_class.save
 end
 
 yogacara = Studio.find_by(name: 'Yogacara Studios | Mount Pleasant Yoga')
@@ -227,6 +327,13 @@ yogacaraprices.each do |yogacaraprice|
   price.save
 end
 
+yogacara_classes = MindBodyScraper::YogaStudio.new.scrape(YOGACARA_STUDIO_URL)
+yogacara_classes.each do |yogacara_class|
+  yoga_class = YogaClass.new(yogacara_class)
+  yoga_class.studio = yogacara
+  yoga_class.save
+end
+
 bikram = Studio.find_by(name: "Bikram's Yoga College India")
 bikramprices = [
   {category: 'single', num_classes: 1, duration: 1, price: 22},
@@ -240,4 +347,11 @@ bikramprices.each do |bikramprice|
   price = ClassPackage.new(bikramprice)
   price.studio_id = bikram.id
   price.save
+end
+
+bikram_classes = MindBodyScraper::YogaStudio.new.scrape(BIKRAM_YOGA_STUDIO_URL)
+bikram_classes.each do |bikram_class|
+  yoga_class = YogaClass.new(bikram_class)
+  yoga_class.studio = bikram
+  yoga_class.save
 end
