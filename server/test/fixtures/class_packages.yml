@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  studio: one
+  category: MyString
+  num_classes: 
+  duration: 
+  price: 9.99
+
+two:
+  studio: two
+  category: MyString
+  num_classes: 
+  duration: 
+  price: 9.99
