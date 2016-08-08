@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
     self.current_user
 
     
-    #will change this to go to react
-    redirect_to root_url , :notice => 'Signed in!'
+    #Will change this to go to react
+    redirect_to 'http://localhost:3000' , :notice => 'Signed in!'
   end
 
   def destroy

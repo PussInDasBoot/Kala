@@ -1,3 +1,2 @@
-./server/config/secrets.yml
 .env
 ./server/log/development.log
