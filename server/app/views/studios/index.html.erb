@@ -1,3 +1,14 @@
 <h1>Yeah boi </h1>
 
+<% flash.each do |key, value| %>
+  <p><%= value %></p>
+<% end %>
+    
+<p>Session User ID: <%= session[:user_id] %></p>
+<p>Session Access Token: <%= session[:access_token] %></p>
+
 <%= link_to "Sign in", signin_path %>
+
+<% if user_signed_in? %>
+  <%= link_to "Sign out", signout_path %>
+<% end %>
