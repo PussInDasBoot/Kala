@@ -1,2 +1,2 @@
 .env
-./server/log/development.log
+server/log/development.log
