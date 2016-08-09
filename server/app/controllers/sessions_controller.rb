@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    reset_session # TODO implement this function, delete session[:user_id] and session[:access_token]
+    reset_session
     redirect_to root_url, :notice => 'Signed out!'
   end
 

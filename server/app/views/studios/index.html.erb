@@ -10,5 +10,7 @@
 <%= link_to "Sign in", signin_path %>
 
 <% if user_signed_in? %>
-  <%= link_to "Sign out", signout_path %>
+  <p><%= current_user.email %></p>
+  <p><%= show_free_busy %></p>
+  <p><%= link_to "Sign out", signout_path %></p>
 <% end %>
