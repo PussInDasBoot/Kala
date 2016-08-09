@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20160808204017) do
     t.string   "category"
     t.integer  "num_classes"
     t.integer  "duration"
-    t.decimal  "price"
+    t.float    "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["studio_id"], name: "index_class_packages_on_studio_id", using: :btree
