@@ -35,9 +35,9 @@ var Filters = React.createClass({
           <Input s={6} label="Type of class" />
         </Row>
         <Input s={12} type='select' label="Studios">
-          <option value='1'>Option 1</option>
-          <option value='2'>Option 2</option>
-          <option value='3'>Option 3</option>
+          { this.props.studios.map(function(studio) {
+            return <option key={studio.id} name={studio.name} value='1'>{studio.name}</option>
+          })}
         </Input>
         <Input s={12} type='select' label="Location">
           <option value='Downtown'>Downtown Vancouver</option>
@@ -52,3 +52,9 @@ var Filters = React.createClass({
   }
 })
 export default Filters;
+
+// { this.props.studios.map(function(studio) {
+//                 return <Marker key={studio.id} studio={studio}
+//                 position={{ lat: studio.lat, lng: studio.lng }}
+//                 studioid={{ studioid: studio.id }} />
+//               })}
