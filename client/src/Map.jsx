@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {GoogleMapLoader, GoogleMap, Marker} from "react-google-maps";
 
-
-
-
 var SimpleMap = React.createClass({
   render() {
     return (
@@ -19,9 +16,13 @@ var SimpleMap = React.createClass({
           googleMapElement={
             <GoogleMap
               ref={(map) => console.log(map)}
-              defaultZoom={3}
-              defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
-            />
+              defaultZoom={15}
+              defaultCenter={{ lat: this.props.studios.lat, lng: this.props.studios.long }}
+              >
+              <Marker
+                position={{ lat: this.props.studios.lat, lng: this.props.studios.long  }}
+                studioid={{ studioid: this.props.studios.id }} />
+            </GoogleMap>
           }
         />
       </section>
@@ -30,3 +31,4 @@ var SimpleMap = React.createClass({
 });
 
 export default SimpleMap;
+

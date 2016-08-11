@@ -40,7 +40,7 @@ var Filters = React.createClass({
           <option value='3'>Option 3</option>
         </Input>
         <Input s={12} type='select' label="Location">
-          <option value='Downtown'>Downtown</option>
+          <option value='Downtown'>Downtown Vancouver</option>
           <option value='Kitsilano'>Kitsilano</option>
           <option value='Mount Pleasant'>Mount Pleasant</option>
           <option value='East Vancouver'>East Vancouver</option>

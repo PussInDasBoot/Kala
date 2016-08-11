@@ -49,6 +49,8 @@ def build_studio(google_url, studio_url, drop_in_price, pass_average, membership
   google_info = GoogleScraper::YogaStudio.new.scrape(google_url)
   studio = Studio.new(google_info)
   studio.location = get_location(studio.address)
+  studio.lat = get_lat(google_url)
+  studio.long = get_long(google_url)
   studio.drop_in_price = drop_in_price
   studio.pass_average = pass_average
   studio.membership_average = membership_average
@@ -77,6 +79,14 @@ def get_location(address)
     location = "East Vancouver"
   end
   location
+end
+
+def get_lat(google_url)
+  google_url.scan(/49.2\d{6}/)
+end
+
+def get_long(google_url)
+  google_url.scan(/-123.1\d{6}/)
 end
 ## END OF HELPER METHODS ##
 
