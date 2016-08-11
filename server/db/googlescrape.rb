@@ -11,10 +11,10 @@ end
 Capybara.run_server = false
 Capybara.current_driver = :chrome
 
-module MyCapybaraTest
-  class Test
+module GoogleScraper
+  class YogaStudio
     include Capybara::DSL
-    def studio(url)
+    def scrape(url)
       visit(url)
       doc = Nokogiri::HTML(page.html)
       sleep(2)

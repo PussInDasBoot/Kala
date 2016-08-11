@@ -1,4 +1,5 @@
 class Studio < ApplicationRecord
-  has_many :class_packages
+  has_many :passes
+  has_many :memberships
   has_many :yoga_classes
 end
