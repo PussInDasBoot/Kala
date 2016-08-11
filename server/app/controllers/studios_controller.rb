@@ -1,4 +1,4 @@
-class StudiosController < ActionController::Base
+class StudiosController < ApplicationController
   def index
 
     studios = Studio.all

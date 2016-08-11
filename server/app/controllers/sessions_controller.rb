@@ -7,16 +7,22 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_or_create_from_auth_hash(auth_hash)
     session[:user_id] = @user.id
+    session[:access_token] = @user.access_token
     self.current_user
 
     
-    #Will change this to go to react
-    redirect_to 'http://localhost:3000' , :notice => 'Signed in!'
+    # redirect_to 'http://localhost:3000' , :notice => 'Signed in!'
+    redirect_to root_url , :notice => "Logged in as #{self.current_user.email}"
   end
 
   def destroy
     reset_session
-    redirect_to root_url, :notice => 'Signed out!'
+    redirect_to root_url, :notice => 'Logged out!'
+  end
+
+  def reset_session
+    session.delete(:user_id)
+    session.delete(:access_token)
   end
 
   def failure
