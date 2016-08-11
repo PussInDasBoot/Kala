@@ -1,3 +1,93 @@
-h1 {
-  color: tomato;
+#calendar, #filters {
+  float: left;
+  width: 70%;
 }
+
+#calendar {
+}
+
+
+#filters {
+}
+
+#map {
+  float: right;
+  height: 800px;
+  width: 30%;
+}
+
+@media (min-width: 768px) {
+.row-7 {
+  display: flex; }
+  .row-7 .col {
+    border: 1px solid blue;
+    box-sizing: border-box;
+    padding: 0 0.5em;
+    width: 14.29%; } 
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+div {
+  border-radius: 2.5px;
+}
+
+.weekday{
+  text-align: center;
+}
+
+.yoga-class {
+  background-color: #A3E4D7;
+  height: 50px;
+  margin: 10px 0;
+  padding-left: 7px;
+}
+
+.one {
+  background-color: #EC407A;
+  height: 50px;
+}
+
+p.weekday {
+background-color: yellow;
+}
+
+/*.event {
+  background-color: #5C6BC0;
+  padding-left: 7px;
+}
+
+.three {
+  height: 150px;
+}
+
+.four {
+  height: 200px;
+}
+
+.seven {
+  height: 350px;
+}
+
+.num-classes {
+    background-color: yellow;
+  padding-left: 3px;
+}
+
+.show-classes {
+  text-align: center;
+  height: 60px;
+  padding: 10px 0;
+}
+
+.show-classes a {
+  font-size: 10px;
+}*/
+
