@@ -16,12 +16,14 @@ var SimpleMap = React.createClass({
           googleMapElement={
             <GoogleMap
               ref={(map) => console.log(map)}
-              defaultZoom={15}
-              defaultCenter={{ lat: this.props.studios.lat, lng: this.props.studios.long }}
+              defaultZoom={13}
+              defaultCenter={{ lat: 49.262852, lng: -123.116510 }}
               >
-              <Marker
-                position={{ lat: this.props.studios.lat, lng: this.props.studios.long }}
-                studioid={{ studioid: this.props.studios.id }} />
+              { this.props.studios.map(function(studio) {
+                return <Marker key={studio.id} studio={studio}
+                position={{ lat: studio.lat, lng: studio.lng }}
+                studioid={{ studioid: studio.id }} />
+              })}
             </GoogleMap>
           }
         />
@@ -31,4 +33,3 @@ var SimpleMap = React.createClass({
 });
 
 export default SimpleMap;
-

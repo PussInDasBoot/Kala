@@ -86,7 +86,7 @@ def get_lat(google_url)
 end
 
 def get_long(google_url)
-  google_url.scan(/-123.1\d{6}/).first
+  google_url.scan(/-123.\d{7}/).first
 end
 ## END OF HELPER METHODS ##
 

@@ -25,8 +25,9 @@ class App extends Component {
     return (
       <div>
         <div id="filters">
-          <h1>Hello React :)</h1>
-          <Filters />
+          {this.state &&
+          <Filters studios={this.state.studios}/>
+          }
         </div>
         <div id="map" style={{height: "300px"}}>
         {this.state &&
