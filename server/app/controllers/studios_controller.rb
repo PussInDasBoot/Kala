@@ -1,8 +1,9 @@
 class StudiosController < ActionController::Base
   def index
 
-    studios = Studio.first
-    render json: studios
+    studios = Studio.all
+    classes = Studio.first.yoga_classes
+    render json: [studios, classes]
 
 
 
