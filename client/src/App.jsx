@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Filters from './Filters.jsx';
+import SimpleMap from './Map.jsx';
 import $ from 'jquery';
 
 class App extends Component {
@@ -26,8 +27,8 @@ class App extends Component {
           <h1>Hello React :)</h1>
           <Filters />
         </div>
-        <div id="map">
-          
+        <div id="map" style={{height: "300px"}}>
+          <SimpleMap />
         </div>
         <div id="calendar">
           
