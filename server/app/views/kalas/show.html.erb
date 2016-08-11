@@ -11,7 +11,7 @@
   <%= image_tag(current_user.profile_picture) %>
 <% end %>
 
-<%= link_to "Sign In", signin_path %>
+<%= link_to "Login", login_path %>
 <% if current_user %>
-  <%= link_to "Sign Out", signout_path %>
+  <%= link_to "Logout", logout_path %>
 <% end %>

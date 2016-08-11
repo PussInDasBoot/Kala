@@ -12,12 +12,12 @@ class SessionsController < ApplicationController
 
     
     # redirect_to 'http://localhost:3000' , :notice => 'Signed in!'
-    redirect_to root_url , :notice => 'Signed in!'
+    redirect_to root_url , :notice => "Logged in as #{self.current_user.email}"
   end
 
   def destroy
     reset_session
-    redirect_to root_url, :notice => 'Signed out!'
+    redirect_to root_url, :notice => 'Logged out!'
   end
 
   def reset_session
