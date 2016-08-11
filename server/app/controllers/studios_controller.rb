@@ -1,4 +1,4 @@
-class StudiosController < ActionController::Base
+class StudiosController < ApplicationController
   def index
     if request.xhr?
         render json: studios = [
