@@ -16,6 +16,14 @@ bundle install
 
 bin/rails db:create etc
 
+pg_dump -a -T ar_internal_metadata -T schema_migrations kala_development > name_of_file.sql
+
 Remember to always run this server on 3001
 
 bin/rails s -b 0.0.0.0 -p 3001
+
+In Vagrant:
+  1) bin/rails db:drop
+  2) bin/rails db:create
+  3) bin/rails db:migrate
+  4) psql kala_development < name_of_file.sql
