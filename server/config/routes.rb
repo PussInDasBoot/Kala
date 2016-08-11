@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   
   get '/get_user_events', to: 'kalas#get_user_events'
   
+
   resources :studios, only: [:index]
+
+  get '/current_user/info', to: 'users#current_user_info'
   resource :kala, only: [:show]
+  
   root 'kalas#show'
 end
