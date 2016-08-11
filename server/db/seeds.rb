@@ -82,11 +82,11 @@ def get_location(address)
 end
 
 def get_lat(google_url)
-  google_url.scan(/49.2\d{6}/)
+  google_url.scan(/49.2\d{6}/).first
 end
 
 def get_long(google_url)
-  google_url.scan(/-123.1\d{6}/)
+  google_url.scan(/-123.1\d{6}/).first
 end
 ## END OF HELPER METHODS ##
 

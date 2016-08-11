@@ -20,7 +20,7 @@ var SimpleMap = React.createClass({
               defaultCenter={{ lat: this.props.studios.lat, lng: this.props.studios.long }}
               >
               <Marker
-                position={{ lat: this.props.studios.lat, lng: this.props.studios.long  }}
+                position={{ lat: this.props.studios.lat, lng: this.props.studios.long }}
                 studioid={{ studioid: this.props.studios.id }} />
             </GoogleMap>
           }
