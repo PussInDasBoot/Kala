@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810221614) do
+ActiveRecord::Schema.define(version: 20160811015410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160810221614) do
     t.datetime "access_token_expiry"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "email"
   end
 
   create_table "yoga_classes", force: :cascade do |t|
