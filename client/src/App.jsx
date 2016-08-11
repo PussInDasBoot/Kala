@@ -8,7 +8,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log("componentDidMount App");
-    $.get("http://localhost:3001")
+    $.get("http://localhost:3001/studios")
     .done(function(data) {
       console.log("Got data from API: ", data);
       // set the contact list as a state property of App
@@ -25,7 +25,9 @@ class App extends Component {
     return (
       <div>
         <div id="filters">
-          <Filters />
+          {this.state &&
+          <Filters studios={this.state.studios}/>
+          }
         </div>
         <div id="map">
         {this.state &&

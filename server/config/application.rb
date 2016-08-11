@@ -11,6 +11,9 @@ require "action_view/railtie"
 require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
+# required for Google API
+require 'signet/oauth_2/client'
+require 'google/apis/calendar_v3'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
