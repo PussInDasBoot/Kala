@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :studios, only: [:index]
-  root 'studios#index'
+  resource :kala, only: [:show]
+  root 'kalas#show'
   
 end
