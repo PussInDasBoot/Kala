@@ -10,53 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160808204017) do
+ActiveRecord::Schema.define(version: 20160810221614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "class_packages", force: :cascade do |t|
+  create_table "memberships", force: :cascade do |t|
+    t.integer "studio_id"
+    t.integer "duration"
+    t.integer "num_classes"
+    t.float   "price"
+    t.index ["studio_id"], name: "index_memberships_on_studio_id", using: :btree
+  end
+
+  create_table "passes", force: :cascade do |t|
     t.integer  "studio_id"
-    t.string   "category"
     t.integer  "num_classes"
-    t.integer  "duration"
     t.float    "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["studio_id"], name: "index_class_packages_on_studio_id", using: :btree
+    t.index ["studio_id"], name: "index_passes_on_studio_id", using: :btree
   end
 
   create_table "studios", force: :cascade do |t|
     t.string   "name"
+    t.string   "location"
     t.string   "address"
     t.float    "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.float    "drop_in_price"
+    t.float    "pass_average"
+    t.float    "membership_average"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "provider"
     t.string   "uid"
+    t.string   "provider"
     t.string   "name"
-    t.string   "email"
-    t.string   "token"
+    t.string   "profile_picture"
+    t.string   "access_token"
     t.string   "refresh_token"
-    t.datetime "token_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "access_token_expiry"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "yoga_classes", force: :cascade do |t|
+    t.integer  "studio_id"
     t.string   "name"
     t.string   "instructor_name"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "studio_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["studio_id"], name: "index_yoga_classes_on_studio_id", using: :btree
   end
 
-  add_foreign_key "class_packages", "studios"
+  add_foreign_key "memberships", "studios"
+  add_foreign_key "passes", "studios"
   add_foreign_key "yoga_classes", "studios"
 end

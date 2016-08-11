@@ -11,8 +11,8 @@ class User < ApplicationRecord
         user.email = auth_hash[:info][:email] || ""
       end
     end
-    user.token = auth_hash[:credentials][:token];
-    user.token_expires_at = Time.at(auth_hash[:credentials][:expires_at])
+    user.access_token = auth_hash[:credentials][:token];
+    user.access_token_expiry = Time.at(auth_hash[:credentials][:expires_at])
     user.refresh_token = auth_hash[:credentials][:refresh_token]
     user.save
     user
