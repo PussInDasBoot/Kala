@@ -1,5 +1,9 @@
 class KalasController < ApplicationController
+
   def show
+  end
+
+  def landing_page
   end
 
   def get_user_events

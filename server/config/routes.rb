@@ -4,13 +4,19 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get '/login', to: 'sessions#new', as: 'login'
   
+  # Retrieve the events from the user's Google calendar and render them in JSON
   get '/get_user_events', to: 'kalas#get_user_events'
   
 
+  # Retrieves all of the studios and renders them in JSON
   resources :studios, only: [:index]
 
+  # Retrieve the user's name, profile picture, and email
   get '/current_user/info', to: 'users#current_user_info'
-  resource :kala, only: [:show]
+
+  # Retrieve the main Kala page (calendar, filter menu, map, etc...)
+  get '/kala', to: 'kalas#show', as: 'kala'
   
-  root 'kalas#show'
+  # Kala's landing page for login
+  root 'kalas#landing_page'
 end
