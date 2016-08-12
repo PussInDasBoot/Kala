@@ -42,7 +42,7 @@ class App extends Component {
         </div>
         <div id="calendar">
           {this.state &&
-          <Calendar classes={this.state.classes}/>
+          <Calendar classes={this.state.google_events}/>
           }
         </div>
       </div>
