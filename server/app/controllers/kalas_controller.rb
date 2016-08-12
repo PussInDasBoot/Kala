@@ -29,16 +29,19 @@ class KalasController < ApplicationController
   end
 
   def get_classes_outside_busy_time
-    # Time.zone = "America/Vancouver"
-    # start_time = Time.zone.now
-    # end_time = time_min + 1.week
-    # yoga_classes = YogaClass.where("start_time >= ? AND end_time <= ?", start_time, end_time)
-    # busy_times = get_busy_times(current_user.email, session[:access_token])
+    Time.zone = "America/Vancouver"
+    start_time = Time.zone.now
+    end_time = start_time + 1.week
+    yoga_classes = YogaClass.where("start_time >= ? AND end_time <= ?", start_time, end_time)
+    busy_times = get_busy_times(current_user.email, session[:access_token])
 
-    # busy_times.each do |busy_time|
-    #   yoga_classes = yoga_classes.where("start_time <= ? OR end_time >= ?", )
-    # end
-    render json: get_busy_times(current_user.email, session[:access_token])
+    busy_times.each do |busy_time|
+      yoga_classes = yoga_classes.where("(start_time < ? AND end_time < ?) OR (start_time > ? AND end_time > ?)", busy_time.start, busy_time.end, busy_time.start, busy_time.end)
+    end
+
+    yoga_classes = yoga_classes.order(:start_time)
+
+    render json: yoga_classes
   end
 
   def get_busy_times(calendar_id, access_token) 
