@@ -217,7 +217,7 @@ summary: "Fake Dentist",
 updated: "2016-08-11T21:31:28.475+00:00"
 },
 {
-color_id: "9",
+color_id: "10",
 created: "2016-08-11T21:29:48.000+00:00",
 creator: {
 display_name: "Rachael Eckersley",
@@ -243,7 +243,7 @@ summary: "Fake Work",
 updated: "2016-08-11T21:31:32.465+00:00"
 },
 {
-color_id: "9",
+color_id: "10",
 created: "2016-08-11T21:30:14.000+00:00",
 creator: {
 display_name: "Rachael Eckersley",
@@ -269,7 +269,7 @@ summary: "Fake Work",
 updated: "2016-08-11T21:31:37.287+00:00"
 },
 {
-color_id: "9",
+color_id: "10",
 created: "2016-08-11T21:30:23.000+00:00",
 creator: {
 display_name: "Rachael Eckersley",
@@ -309,21 +309,11 @@ this.setState({google_events: event_data});
   }
 
 
-  filterChanged(newFilter) {
-    // filter contact list
-    var newContacts = this.state.contacts.filter(function(contact) {
-      return contact.name.toLowerCase().startsWith(newFilter.toLowerCase());
-
-    });
-    this.setState({filteredContacts: newContacts});
-  }
-
-
 
   render() {
-    {this.state &&
-    console.log(this.state.google_events)
-    }
+    // {this.state &&
+    // console.log(this.state.google_events)
+    // }
     return (
       <div>
         <div id="filters">

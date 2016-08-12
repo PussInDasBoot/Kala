@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class EventItem extends Component {
   render() {
+  console.log(this.props.user_event)
     return (
 
       <div className="yoga-class">
