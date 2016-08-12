@@ -3,8 +3,12 @@ import Filters from './Filters.jsx';
 import SimpleMap from './Map.jsx';
 import Calendar from './Calendar.jsx';
 import $ from 'jquery';
+import reactMaterialize from 'react-materialize';
 
-class App extends Component {
+var App = React.createClass({
+  getInitialState: function () {
+      return {studios: [], classes: [], google_events: []}
+    },
 
   componentDidMount() {
     console.log("componentDidMount App");
@@ -22,11 +26,11 @@ class App extends Component {
       // automatically re-renders App
       this.setState({google_events: data})
     }.bind(this));
-  }
+  },
 
   render() {
     {this.state &&
-    console.log(this.state.classes)
+    console.log("this state", this.state.google_events)
     }
     return (
       <div>
@@ -42,11 +46,11 @@ class App extends Component {
         </div>
         <div id="calendar">
           {this.state &&
-          <Calendar classes={this.state.classes}/>
+          <Calendar google_events={this.state.google_events}/>
           }
         </div>
       </div>
     );
   }
-}
+})
 export default App;
