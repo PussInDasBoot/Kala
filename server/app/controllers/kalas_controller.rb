@@ -36,7 +36,7 @@ class KalasController < ApplicationController
     busy_times = get_busy_times(current_user.email, session[:access_token])
 
     busy_times.each do |busy_time|
-      yoga_classes = yoga_classes.where("(start_time < ? AND end_time < ?) OR (start_time > ? AND end_time > ?)", busy_time.start, busy_time.end, busy_time.start, busy_time.end)
+      yoga_classes = yoga_classes.where("(start_time < ? AND end_time < ?) OR (start_time > ? AND end_time > ?)", busy_time.start, busy_time.start, busy_time.end, busy_time.end)
     end
 
     yoga_classes = yoga_classes.order(:start_time)
