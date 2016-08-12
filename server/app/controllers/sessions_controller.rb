@@ -10,9 +10,7 @@ class SessionsController < ApplicationController
     session[:access_token] = @user.access_token
     self.current_user
 
-    
-    # redirect_to 'http://localhost:3000' , :notice => 'Signed in!'
-    redirect_to root_url , :notice => "Logged in as #{self.current_user.email}"
+    redirect_to kala_path
   end
 
   def destroy

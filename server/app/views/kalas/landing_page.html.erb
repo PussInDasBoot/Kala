@@ -1,0 +1,17 @@
+<h1>Kala Intro Page</h1>
+
+<% flash.each do |key, value| %>
+  <h2><%= value %></h2>
+<% end %>
+
+<% if current_user %>
+  <p>Session User ID: <%= session[:user_id] %></p>
+  <p>Session Access Token: <%= session[:access_token] %></p>
+  <p>Session User Email: <%= current_user.email %></p>
+  <%= image_tag(current_user.profile_picture) %>
+<% end %>
+
+<%= link_to "Login", login_path %>
+<% if current_user %>
+  <%= link_to "Logout", logout_path %>
+<% end %>
