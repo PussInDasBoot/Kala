@@ -76,15 +76,15 @@ class Calendar extends Component {
           </div>
           <div className="col">
             <p className="weekday">Fri 8/19</p>
-            { this.state && 
-                  this.state.fridayEvents.map(function(event){ return <EventItem user_event={event} />})
+            { this.state && this.state.fridayEvents &&
+                  this.state.fridayEvents.map(function(event){ return <EventItem key={event.id} user_event={event} />})
                 }
           </div>
 
           <div className="col">
             <p className="weekday">Sat 8/20</p>
-            { this.state &&
-                  this.state.saturdayEvents.map(function(event){ return <EventItem user_event={event} />})
+            { this.state &&this.state.saturdayEvents &&
+                  this.state.saturdayEvents.map(function(event){ return <EventItem key={event.id} user_event={event} />})
                 }
           </div>
       </div>
