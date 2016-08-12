@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Input, Icon, Row, Col} from 'react-materialize';
+import moment from 'moment';
+import Day from './Day.jsx'
 
 var Calendar = React.createClass({
   getInitialState: function () {
@@ -13,41 +15,36 @@ var Calendar = React.createClass({
   mouseOut: function () {
       this.setState({hover: false});
   },
-  render() {
+  splitByDay: function (allevents) {
+    var splitByDayEvents = []
+    allevents.forEach(function(event){
+      var weekdayNumber = moment(event.start.date_time).isoWeekday();
+      if (!splitByDayEvents[weekdayNumber]) {
+        splitByDayEvents[weekdayNumber] = []
+      };
+      splitByDayEvents[weekdayNumber].push(event);
+    });
+    return splitByDayEvents
+  },
+  render: function() {
+    var eventsByDay = this.splitByDay(this.props.google_events);
+    var todayWeekday = moment().isoWeekday();
+    var dayColumns = [];
+    for (let i = 0; i <7; i++) {
+      var weekdaysNumber = todayWeekday+i;
+      if(weekdaysNumber > 7) {
+        weekdaysNumber -= 7;
+      }
+      dayColumns.push((
+        <div className="col">
+          <Day eventsByDay={eventsByDay[weekdaysNumber] || []}/>
+        </div>
+        ));
+    }
+    console.log(eventsByDay)
     return (
         <div className="row-7">
-          <div className="col">
-            <p className="weekday">Sun 8/7</p>
-
-            <div className="yoga-class">
-              <p><small><strong>11a-12a</strong></small><br/>
-              Class Name</p>
-            </div>
-          </div>
-
-          <div className="col">
-            <p className="weekday">Mon 8/8</p>
-          </div>
-
-          <div className="col">
-            <p className="weekday">Tue 8/9</p>
-          </div>
-
-          <div className="col">
-            <p className="weekday">Wed 8/10</p>
-          </div>
-
-          <div className="col">
-            <p className="weekday">Thu 8/11</p>
-          </div>
-
-          <div className="col">
-            <p className="weekday">Fri 8/12</p>
-          </div>
-
-          <div className="col">
-            <p className="weekday">Sat 8/13</p>
-          </div>
+          {dayColumns}
       </div>
     );
   }
