@@ -15,8 +15,14 @@ class App extends Component {
       // automatically re-renders App
       this.setState({studios: data[0], classes: data[1]})
     }.bind(this)); // bind this makes 'this' inside the callback be the same as 'this' in componentDidMount, allowing us to call setState
+    $.get("http://localhost:3001/get_user_events")
+    .done(function(data) {
+      console.log("Got data from API: ", data);
+      // set the contact list as a state property of App
+      // automatically re-renders App
+      this.setState({google_events: data})
+    }.bind(this));
   }
-
 
   render() {
     {this.state &&
