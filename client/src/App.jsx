@@ -262,7 +262,7 @@ email: "r8cha3l@gmail.com"
 },
 sequence: 0,
 start: {
-date_time: "2016-08-17T07:00:00.000-07:00"
+date_time: "2016-08-19T07:00:00.000-07:00"
 },
 status: "confirmed",
 summary: "Fake Work",
