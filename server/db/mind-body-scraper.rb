@@ -114,9 +114,9 @@ module MindBodyScraper
 
       start_time = DateTime.parse(start_time)
       end_time = start_time + (duration[:hour]/24.0) + (duration[:minutes]/1440.0)
-      pst_offset = Rational(-7, 24)
-      class_time[:start] = DateTime.new(year, month, day, start_time.hour, start_time.minute, 0, pst_offset)
-      class_time[:end] = DateTime.new(year, month, day, end_time.hour, end_time.minute, 0, pst_offset)
+      Time.zone = "America/Vancouver"
+      class_time[:start] = Time.zone.local(year, month, day, start_time.hour, start_time.minute, 0)
+      class_time[:end] = Time.zone.local(year, month, day, end_time.hour, end_time.minute, 0)
       class_time
     end
 
