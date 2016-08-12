@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Input, Icon, Row, Col} from 'react-materialize';
+import EventItem from './EventItem.jsx'
 
 var Day = React.createClass({
   events: function () {
@@ -10,7 +11,7 @@ var Day = React.createClass({
       // loop for however many time slots we decide for a day
         <div>
           <p className="weekday">{this.props.eventsByDay.map(function(event){
-            return (<span>{event.start.date_time}</span>)
+            return (<span>{event.start}</span>)
           })}</p>
           <EventItem events={this.events()}/>
       </div>

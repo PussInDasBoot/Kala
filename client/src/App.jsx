@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {
     {this.state &&
-    console.log(this.state.classes)
+    console.log("this state", this.state.google_events)
     }
     return (
       <div>
@@ -42,7 +42,7 @@ class App extends Component {
         </div>
         <div id="calendar">
           {this.state &&
-          <Calendar classes={this.state.google_events}/>
+          <Calendar google_events={this.state.google_events}/>
           }
         </div>
       </div>

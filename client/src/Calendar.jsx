@@ -18,7 +18,7 @@ var Calendar = React.createClass({
   splitByDay: function (allevents) {
     var splitByDayEvents = []
     allevents.forEach(function(event){
-      var weekdayNumber = moment(event.start.date_time).isoWeekday();
+      var weekdayNumber = moment(event.start).isoWeekday();
       if (!splitByDayEvents[weekdayNumber]) {
         splitByDayEvents[weekdayNumber] = []
       };
