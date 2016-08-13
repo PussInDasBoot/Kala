@@ -8,5 +8,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
       "https://www.googleapis.com/auth/userinfo.email"
     ]
   provider :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'],
-           {:scope =>scopes.join(" ")}
+           scope: scopes.join(" "), jwt_leeway: 600
 end
