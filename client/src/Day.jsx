@@ -3,6 +3,17 @@ import EventItem from './EventItem.jsx';
 import moment from 'moment';
 
 var Day = React.createClass({
+  timeDateConverter: function (google_events){
+    var event_data = []
+    google_events.forEach(function(event) {
+      var newObject = {summary: "", start_time: "", end_time: ""};
+      newObject.summary = event.summary;
+      newObject.start_time = moment(event.start).format('h:mm a');
+      newObject.end_time = moment(event.end).format('h:mm a');
+      event_data.push(newObject);
+    })
+    return event_data
+  },
   freeEventsFinder: function (event_data) {
     //function to filter events for a certain time slot
     var schedule = [];
@@ -26,21 +37,20 @@ var Day = React.createClass({
                 schedule.push({summary: 'Free Time', start_time: start_time, end_time: '21:00 pm'});
         }
     }
-    console.log(schedule)
+    return schedule;
   },
   
   render() {
-    var freeEvents = this.freeEventsFinder(this.props.eventsByDay);
+    var convertedTimes = this.timeDateConverter(this.props.eventsByDay);
+    console.log(convertedTimes);
+    var freeEvents = this.freeEventsFinder(convertedTimes);
     console.log("free events", freeEvents);
-    { this.props.eventsByDay[0] &&
-      console.log(this.props.eventsByDay[0].start);
-    }
+    console.log("key", this.props.key)
     return (
-      // loop for however many time slots we decide for a day
-
         <div>
-          <p className="weekday">{this.props.eventsByDay.map(function(event){
-            return (<span>{event.summary}</span>)
+          <p className="weekday">{this.props.key}
+          {freeEvents.map(function(event){
+            return <EventItem event={event} />
           })}</p>
           
       </div>
@@ -49,17 +59,3 @@ var Day = React.createClass({
 })
 
 export default Day;
-
-// <EventItem events={this.events()}/>
-
-// splitByDay: function (allevents) {
-//     var splitByDayEvents = []
-//     allevents.forEach(function(event){
-//       var weekdayNumber = moment(event.start).isoWeekday();
-//       if (!splitByDayEvents[weekdayNumber]) {
-//         splitByDayEvents[weekdayNumber] = []
-//       };
-//       splitByDayEvents[weekdayNumber].push(event);
-//     });
-//     return splitByDayEvents
-//   },
