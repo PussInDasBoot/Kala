@@ -9,8 +9,10 @@ Rails.application.routes.draw do
 
   # Retrieves all of the studios and renders them in JSON
   resources :studios, only: [:index]
-  
 
+  # Add a Yoga Class to a user's Google Calendar
+  get '/add_class_to_calendar/:id', to: 'yoga_classes#add_class_to_calendar'
+  
   # Retrieve the events from the user's Google calendar and render them in JSON
   get '/get_user_events', to: 'kalas#get_user_events'
 

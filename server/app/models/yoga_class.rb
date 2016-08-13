@@ -18,6 +18,26 @@ class YogaClass < ApplicationRecord
       end
     end
   end
+
+  def convert_to_calendar_event
+    Time.zone = "America/Vancouver"
+    event = Google::Apis::CalendarV3::Event.new
+    event.summary = "#{name} @ #{studio.name}"
+    event.description = get_description
+    event.location = studio.address
+    event.start = { time_zone: "America/Vancouver", date_time: start_time.to_datetime.rfc3339 }
+    event.end = { time_zone: "America/Vancouver", date_time: end_time.to_datetime.rfc3339 }
+    event
+  end
+
+  private
+
+  def get_description
+    "Instructor: #{instructor_name} \
+    \nDrop In Price: $#{'%.02f' % studio.drop_in_price} \
+    \nPass Average: $#{'%.02f' % studio.pass_average} \
+    \nMembership Average: $#{'%.02f' % studio.membership_average}"
+  end
 end
 
 
