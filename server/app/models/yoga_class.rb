@@ -27,6 +27,7 @@ class YogaClass < ApplicationRecord
     event.location = studio.address
     event.start = { time_zone: "America/Vancouver", date_time: start_time.to_datetime.rfc3339 }
     event.end = { time_zone: "America/Vancouver", date_time: end_time.to_datetime.rfc3339 }
+    event.reminders = { use_default: false, overrides: [{ reminder_method: 'email', minutes: 60 }] }
     event
   end
 
