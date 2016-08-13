@@ -15,7 +15,6 @@ var SimpleMap = React.createClass({
           }
           googleMapElement={
             <GoogleMap
-              ref={(map) => console.log(map)}
               defaultZoom={13}
               defaultCenter={{ lat: 49.262852, lng: -123.116510 }}
               >

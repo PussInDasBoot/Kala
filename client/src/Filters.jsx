@@ -7,7 +7,6 @@ var Filters = React.createClass({
   },
   handleChange(e) {
     this.setState({Commitment: e.target.value}, function (){
-      console.log(this.state)
     })
   },
   render() {
