@@ -14,11 +14,8 @@ var App = React.createClass({
     console.log("componentDidMount App");
     $.get("http://localhost:3001/studios")
     .done(function(data) {
-      // console.log("Got data from API: ", data);
-      // set the contact list as a state property of App
-      // automatically re-renders App
       this.setState({studios: data})
-    }.bind(this)); // bind this makes 'this' inside the callback be the same as 'this' in componentDidMount, allowing us to call setState
+    }.bind(this)); 
     $.get("http://localhost:3001/get_user_events")
     .done(function(data) {
       this.setState({google_events: data})
