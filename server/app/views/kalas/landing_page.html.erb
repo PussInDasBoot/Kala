@@ -1,40 +1,42 @@
 <h1>Kala Intro Page</h1>
 
-<form action="//localhost:3001/filter" id="filter-classes">
-  <strong>Commitment</strong><br>
-  Single<input type="radio" name="commitment" value="single">
-  Pass<input type="radio" name="commitment" value="pass">
-  Membership<input type="radio" name="commitment" value="membership"><br>
-  <input type="number" min="0" name="max_price" placeholder="Max Price Per Class"><br>
+<% if current_user %>
+  <form action="//localhost:3001/filter" id="filter-classes">
+    <strong>Commitment</strong><br>
+    Single<input type="radio" name="commitment" value="single">
+    Pass<input type="radio" name="commitment" value="pass">
+    Membership<input type="radio" name="commitment" value="membership"><br>
+    <input type="number" min="0" name="max_price" placeholder="Max Price Per Class"><br>
 
-  <input type="text" placeholder="Class Name" name="class_name"><br>
+    <input type="text" placeholder="Class Name" name="class_name"><br>
 
-  <select name="studio_name" form="filter-classes">
-    <option value="" selected>Studio Name</option>
-    <option value="Stretch">Stretch</option>
-    <option value="Karma">Karma</option>
-    <option value="Chopra">Chopra</option>
-  </select><br>
+    <select name="studio_name" form="filter-classes">
+      <option value="" selected>Studio Name</option>
+      <option value="Stretch">Stretch</option>
+      <option value="Karma">Karma</option>
+      <option value="Chopra">Chopra</option>
+    </select><br>
 
-  <select name="rating" form="filter-classes">
-    <option value="" selected>Studio Rating</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select><br>
-  
-  <select name="location" form="filter-classes">
-    <option value="" selected>Location</option>
-    <option value="Downtown Vancouver">Downtown Vancouver</option>
-    <option value="Kitsilano">Kitsilano</option>
-    <option value="East Vancouver">East Vancouver</option>
-    <option value="Mount Pleasant">Mount Pleasant</option>
-  </select><br>
+    <select name="rating" form="filter-classes">
+      <option value="" selected>Studio Rating</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select><br>
+    
+    <select name="location" form="filter-classes">
+      <option value="" selected>Location</option>
+      <option value="Downtown Vancouver">Downtown Vancouver</option>
+      <option value="Kitsilano">Kitsilano</option>
+      <option value="East Vancouver">East Vancouver</option>
+      <option value="Mount Pleasant">Mount Pleasant</option>
+    </select><br>
 
-  <input type="submit" label="Submit">
-</form>
+    <input type="submit" label="Submit">
+  </form>
+<% end %>
 
 <% flash.each do |key, value| %>
   <h2><%= value %></h2>

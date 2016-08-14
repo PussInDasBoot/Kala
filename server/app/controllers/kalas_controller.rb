@@ -7,18 +7,19 @@ class KalasController < ApplicationController
   end
 
   def filter
-    # yoga_classes = YogaClass.filter(params[:commitment],
-    #                                 params[:max_price],
-    #                                 params[:rating],
-    #                                 params[:class_name],
-    #                                 params[:studio_name],
-    #                                 params[:location])
-    render json: [params[:commitment],
+    puts "commitment.nil? #{params[:commitment].nil?}"
+    puts "max_price.nil? #{params[:max_price].nil?}"
+    puts "rating.nil? #{params[:rating].nil?}"
+    puts "class_name.nil? #{params[:class_name].nil?}"
+    puts "studio_name.nil? #{params[:studio_name].nil?}"
+    puts "location.nil? #{params[:location].nil?}"
+    yoga_classes = YogaClass.filter(params[:commitment],
                                     params[:max_price],
                                     params[:rating],
                                     params[:class_name],
                                     params[:studio_name],
-                                    params[:location]]
+                                    params[:location])
+    render json: yoga_classes
   end
 
   def get_user_events

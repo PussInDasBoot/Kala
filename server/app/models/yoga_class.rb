@@ -11,7 +11,7 @@ class YogaClass < ApplicationRecord
     yoga_classes = yoga_classes.joins(:studio).where('studios.name = ?', studio_name) unless studio_name.empty?
     yoga_classes = yoga_classes.joins(:studio).where('studios.rating > ?', rating.to_f) unless rating.empty?
     yoga_classes = yoga_classes.joins(:studio).where('studios.location = ?', location) unless location.empty?
-    unless commitment.empty? || max_price.empty?
+    unless commitment.nil? || max_price.empty?
       case commitment
       when "single"
         yoga_classes = yoga_classes.joins(:studio).where('studios.drop_in_price <= ?', max_price.to_f)
