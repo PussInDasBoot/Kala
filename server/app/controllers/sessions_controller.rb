@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   def failure
     # if you want to debug something better, this is the object you want
     #auth = request.env["omniauth.error"]
-    redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
+    redirect_to root_url, :alert => "Denied Kala access to your Google Account"
   end
 
   protected
