@@ -37,7 +37,7 @@ var App = React.createClass({
           <SimpleMap studios={this.state.studios}/>
         </div>
         <div id="calendar">
-          <Calendar google_events={this.state.google_events}/>
+          <Calendar google_events={this.state.google_events} classes={this.state.classes}/>
         </div>
       </div>
     );
