@@ -1,15 +1,28 @@
 import React, {Component} from 'react';
 
-class EventItem extends Component {
+var EventItem = React.createClass({
   render() {
+    var event = [];
+      if(this.props.event.summary == "Free Time") {
+        event.push ((
+          <div className="free-time">
+            <span class="new badge" data-badge-caption="yoga classes available at this time">4</span>
+          </div>
+          ))
+      } else {
+          event.push ((
+            <div className="google-event">
+              <span class="new badge" data-badge-caption="yoga classes available at this time">4</span>
+            </div>
+            ))
+        }
     return (
       // TODO: render differently if it's a free time event
-
-      <div className="yoga-class">
-        <p><small><strong>{this.props.event.start_time}-{this.props.event.end_time}</strong></small><br/>
-        {this.props.event.summary}</p>
+      <div className="event">
+        {event}
       </div>
+      
     );
   }
-}
+})
 export default EventItem;
