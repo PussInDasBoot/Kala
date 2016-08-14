@@ -6,6 +6,21 @@ class KalasController < ApplicationController
   def landing_page
   end
 
+  def filter
+    # yoga_classes = YogaClass.filter(params[:commitment],
+    #                                 params[:max_price],
+    #                                 params[:rating],
+    #                                 params[:class_name],
+    #                                 params[:studio_name],
+    #                                 params[:location])
+    render json: [params[:commitment],
+                                    params[:max_price],
+                                    params[:rating],
+                                    params[:class_name],
+                                    params[:studio_name],
+                                    params[:location]]
+  end
+
   def get_user_events
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = session[:access_token]

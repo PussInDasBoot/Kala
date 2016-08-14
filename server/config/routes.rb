@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/get_user_events', to: 'kalas#get_user_events'
   # Retrieve the Yoga classes that aren't in the user's busy time and render them in JSON
   get '/classes_outside_busy_time', to: 'kalas#get_classes_outside_busy_time'
+  # Retrieve the Yoga classes that satisfy the filters
+  get '/filter', to: 'kalas#filter'
   # Retrieve the main Kala page (calendar, filter menu, map, etc...)
   get '/kala', to: 'kalas#show', as: 'kala'
   
