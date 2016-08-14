@@ -4,11 +4,8 @@ import moment from 'moment';
 var EventItem = React.createClass({
   render() {
     var start_time = moment(moment(this.props.event.start).format('HH:mm'), 'HH:mm')
-    // console.log('start', start);
     var end_time = moment(moment(this.props.event.end).format('HH:mm'), 'HH:mm')
-    // console.log('end', end);
     var duration = end_time.diff(start_time, 'minutes');
-    console.log("duration", duration);
 
     var style = {
       height: duration
@@ -32,7 +29,6 @@ var EventItem = React.createClass({
             ))
         }
     return (
-      // TODO: render differently if it's a free time event
       <div className="event">
         {event}
       </div>

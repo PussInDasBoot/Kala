@@ -13,7 +13,6 @@ var Day = React.createClass({
       var endOfDay = moment(event_data[i]).endOf('day');
       var ninePM = endOfDay.subtract(3, 'hours').add(1, 'minute');
       var convertedNinePM = moment(ninePM).format('YYYY-MM-DDTHH:mm:ss.SSSSZ');
-      console.log("converted", convertedNinePM);
       var end = event_data[i].start;
         
       if(i)
@@ -31,12 +30,12 @@ var Day = React.createClass({
               schedule.push({summary: 'Free Time', start: start, end: convertedNinePM});
       }
     }
-    console.log("schedule", schedule);
     return schedule;
 
   },
   
   render() {
+    console.log("yogaclassesday", this.props.yogaClasses);
     var freeEvents = this.freeEventsFinder(this.props.eventsByDay);
     return (
         <div>
