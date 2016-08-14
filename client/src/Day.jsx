@@ -7,10 +7,10 @@ var Day = React.createClass({
     var schedule = [];
     
     for(var i=0, l=event_data.length; i<l; i++){
-      var startOfDay = moment(event_data[i]).startOf('day');
+      var startOfDay = moment(event_data[i].start).startOf('day');
       var sixAM = startOfDay.add(6, 'hours');
       var start = moment(sixAM).format('YYYY-MM-DDTHH:mm:ss.SSSSZ');
-      var endOfDay = moment(event_data[i]).endOf('day');
+      var endOfDay = moment(event_data[i].start).endOf('day');
       var ninePM = endOfDay.subtract(3, 'hours').add(1, 'minute');
       var convertedNinePM = moment(ninePM).format('YYYY-MM-DDTHH:mm:ss.SSSSZ');
       var end = event_data[i].start;
@@ -35,13 +35,14 @@ var Day = React.createClass({
   },
   
   render() {
-    console.log("yogaclassesday", this.props.yogaClasses);
+    var yogaClasses = this.props.yogaClasses;
+    console.log("dayYogaClasses", this.props.yogaClasses);
     var freeEvents = this.freeEventsFinder(this.props.eventsByDay);
     return (
         <div>
           <p className="weekday">
           {freeEvents.map(function(event){
-            return <EventItem event={event} />
+            return <EventItem event={event} yogaClasses={yogaClasses} />
           })}</p>
           
       </div>
