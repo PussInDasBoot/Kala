@@ -2,8 +2,7 @@ class StudiosController < ApplicationController
   def index
 
     studios = Studio.all
-    classes = Studio.first.yoga_classes
-    render json: [studios, classes]
+    render json: studios
 
 
 

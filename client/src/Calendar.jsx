@@ -40,7 +40,6 @@ var Calendar = React.createClass({
         </div>
         ));
     }
-    console.log("weekday", weekdaysNumber)
     return (
         <div className="row-7">
           {dayColumns}

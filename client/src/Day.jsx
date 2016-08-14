@@ -8,8 +8,8 @@ var Day = React.createClass({
     google_events.forEach(function(event) {
       var newObject = {summary: "", start_time: "", end_time: ""};
       newObject.summary = event.summary;
-      newObject.start_time = moment(event.start).format('h:mm a');
-      newObject.end_time = moment(event.end).format('h:mm a');
+      newObject.start_time = moment(event.start).format('HH:mm');
+      newObject.end_time = moment(event.end).format('HH:mm');
       event_data.push(newObject);
     })
     return event_data
@@ -42,13 +42,10 @@ var Day = React.createClass({
   
   render() {
     var convertedTimes = this.timeDateConverter(this.props.eventsByDay);
-    console.log(convertedTimes);
     var freeEvents = this.freeEventsFinder(convertedTimes);
-    console.log("free events", freeEvents);
-    console.log("key", this.props.key)
     return (
         <div>
-          <p className="weekday">{this.props.key}
+          <p className="weekday">
           {freeEvents.map(function(event){
             return <EventItem event={event} />
           })}</p>
