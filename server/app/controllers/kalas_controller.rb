@@ -13,7 +13,7 @@ class KalasController < ApplicationController
 
     Time.zone = "America/Vancouver"
     time_min = Time.zone.now
-    time_max = time_min + 1.week
+    time_max = (time_min + 1.week).beginning_of_day
     response = service.list_events(current_user_calendar_id,
                                    single_events: true,
                                    order_by: 'startTime',
@@ -31,7 +31,7 @@ class KalasController < ApplicationController
   def get_classes_outside_busy_time
     Time.zone = "America/Vancouver"
     start_time = Time.zone.now
-    end_time = start_time + 1.week
+    end_time = (start_time + 1.week).beginning_of_day
     yoga_classes = YogaClass.where("start_time >= ? AND end_time <= ?", start_time, end_time)
     busy_times = get_busy_times(current_user.email, session[:access_token])
 
@@ -47,7 +47,7 @@ class KalasController < ApplicationController
   def get_busy_times(calendar_id, access_token) 
     Time.zone = "America/Vancouver"
     time_min = Time.zone.now.to_datetime
-    time_max = (time_min + 1.week).to_datetime
+    time_max = (time_min + 1.week).beginning_of_day.to_datetime
 
     free_busy_request_item = Google::Apis::CalendarV3::FreeBusyRequestItem.new
     free_busy_request_item.id = calendar_id
