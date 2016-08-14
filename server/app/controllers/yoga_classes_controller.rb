@@ -9,4 +9,9 @@ class YogaClassesController < ApplicationController
     render json: yoga_class
   end
 
+  def show
+    yoga_class = YogaClass.find(params[:id])
+    render json: [yoga_class, yoga_class.studio]
+  end
+
 end
