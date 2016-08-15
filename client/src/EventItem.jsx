@@ -8,7 +8,6 @@ var EventItem = React.createClass({
   onModalLinkClick: function (event){
     event.preventDefault();
     var modalIDSelector = $(event.currentTarget).attr('href');
-    console.log("event target", event.currentTarget);
     $(modalIDSelector).openModal();
   },
 
@@ -25,9 +24,6 @@ var EventItem = React.createClass({
   },
   render() {
     var yoga_classes = this.yogaClasses(this.props.yogaClasses, this.props.event);
-    console.log("props", this.props.yogaClasses);
-    console.log("eventprop", this.props.event);
-    console.log("fits", yoga_classes);
     var start_time = moment(moment(this.props.event.start).format('HH:mm'), 'HH:mm')
     var end_time = moment(moment(this.props.event.end).format('HH:mm'), 'HH:mm')
     var duration = end_time.diff(start_time, 'minutes');
@@ -53,7 +49,7 @@ var EventItem = React.createClass({
           </div>
           ))
       } 
-      if(this.props.event.summary == "Free Time" && yoga_classes.length == 0) {
+      else if (this.props.event.summary == "Free Time" && yoga_classes.length == 0) {
         event.push ((
           <div className="free-time-empty" style={style}>
             <p><small><strong>{starttime}-{endtime}</strong></small><br/>
