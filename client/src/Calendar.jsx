@@ -15,7 +15,7 @@ var Calendar = React.createClass({
       this.setState({hover: false});
   },
   splitByDay: function (allevents) {
-    var splitByDayEvents = []
+    var splitByDayEvents = [];
     allevents.forEach(function(event){
       var weekdayNumber = moment(event.start).isoWeekday();
       if (!splitByDayEvents[weekdayNumber]) {
@@ -25,7 +25,19 @@ var Calendar = React.createClass({
     });
     return splitByDayEvents
   },
+  yogaClassesByDay: function (yogaclasses) {
+    var splitByDayEvents = [];
+    yogaclasses.forEach(function(yogaclass){
+      var weekdayNumber = moment(yogaclass.start_time).isoWeekday();
+      if (!splitByDayEvents[weekdayNumber]) {
+        splitByDayEvents[weekdayNumber] = []
+      };
+      splitByDayEvents[weekdayNumber].push(yogaclass);
+    });
+    return splitByDayEvents;
+  },
   render: function() {
+    var yogaClassesByDay = this.yogaClassesByDay(this.props.classes);
     var eventsByDay = this.splitByDay(this.props.google_events);
     var todayWeekday = moment().isoWeekday();
     var dayColumns = [];
@@ -36,7 +48,7 @@ var Calendar = React.createClass({
       }
       dayColumns.push((
         <div className="col">{moment.weekdays(weekdaysNumber)}
-          <Day eventsByDay={eventsByDay[weekdaysNumber] || []}/>
+          <Day eventsByDay={eventsByDay[weekdaysNumber] || []} yogaClasses={yogaClassesByDay[weekdaysNumber] || []}/>
         </div>
         ));
     }

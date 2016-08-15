@@ -32,8 +32,7 @@ var App = React.createClass({
   },
 
   render() {
-    console.log(this.state.classes);
-    console.log(this.state.profile);
+
     return (
       <div>
         <div id="filters">
