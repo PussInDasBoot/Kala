@@ -36,7 +36,7 @@ var Day = React.createClass({
   
   render() {
     var yogaClasses = this.props.yogaClasses;
-    console.log("dayYogaClasses", this.props.yogaClasses);
+    // console.log("dayYogaClasses", this.props.yogaClasses);
     var freeEvents = this.freeEventsFinder(this.props.eventsByDay);
     return (
         <div>

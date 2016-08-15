@@ -12,9 +12,9 @@ var Show = React.createClass({
           <div className="card blue-grey darken-1">
             <div className="card-content white-text">
               <span className="card-title">{this.props.classinfo.name}</span>
-              <p>Studio: {this.props.studio.name}</p>
-              <p>Address: {this.props.studio.address}</p>
-              <p>Location: {this.props.studio.location}</p>
+              <p>{this.props.studio.name}</p>
+              <p>{this.props.studio.address}</p>
+              <p>{this.props.studio.location}</p>
               {this.props.studio.rating &&
               <p>Google+ rating: {this.props.studio.rating}</p>
               }

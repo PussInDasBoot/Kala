@@ -29,7 +29,7 @@ var EventItem = React.createClass({
     var duration = end_time.diff(start_time, 'minutes');
 
     var style = {
-      height: duration
+      height: duration/1.25
     };
     var event = [];
     var starttime = moment(this.props.event.start).format("h:mm a");
