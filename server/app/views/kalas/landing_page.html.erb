@@ -1,7 +1,10 @@
 <div id="landing-page-holder" class="container center-align">
   <%= image_tag("kala_logo.png", id: "kala-logo") %>
   <div class="section">
-    <section>Application Description</section>
+    <section id="slogan">
+      Posing yoga classes around your <span>kala</span>nder<br>to help you find
+      the best fit for your lifestyle
+     </section>
   </div>
   <a id="login-button" class="btn waves-effect waves-light" href="/login"><i class="fa fa-google left material-icons" aria-hidden="true"></i>Login with Google</a>
   <% if current_user %>

@@ -14,15 +14,23 @@
  *= require_self
  */
 
+ span {
+  color: #DF3A30;
+ }
+
  #login-button {
   background-color: #DF3A30;
  }
 
 #landing-page-holder {
-  padding-top: 4.5em;
+  padding-top: 7em;
 }
   
  #kala-logo {
   height: 10em;
   width: 30em;
+ }
+
+ #slogan {
+  font-size: 1.3em;
  }
