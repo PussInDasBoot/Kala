@@ -1,3 +1,7 @@
 .env
 server/log/development.log
 server/tmp/cache
+.DS_Store
+server/.DS_Store
+server/app/.DS_Store
+server/app/assets/.DS_Store
