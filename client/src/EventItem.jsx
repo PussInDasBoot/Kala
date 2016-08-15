@@ -40,9 +40,9 @@ var EventItem = React.createClass({
           <div>
             <a href={"#"+ModalID} onClick={this.onModalLinkClick}>
               <div className="free-time event-item" style={style}>
-                <p><small className="event-time">{starttime}-{endtime}</small><br/>
-                  + SHOW CLASSES</p>
-                <p>{yoga_classes.length} Available</p>
+                <p><small className="event-time available-time">{starttime}-{endtime}</small></p>
+                <p className="explore-available">Click to explore.</p>
+                <h6 className="num-available">{yoga_classes.length} Available</h6> 
               </div>
             </a>
             <AvailableClasses modalid={ModalID} yoga_classes={yoga_classes} />
@@ -58,7 +58,7 @@ var EventItem = React.createClass({
           ))
       } else {
           event.push ((
-            <div className="google-class event-item" style={style}>
+            <div className="google-event event-item" style={style}>
               <p><small className="event-time">{starttime}-{endtime}</small><br/>
               {this.props.event.summary}</p>
             </div>

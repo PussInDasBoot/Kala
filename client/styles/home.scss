@@ -112,15 +112,30 @@ span.kala {
   text-align: center;
 }
 
-.google-class {
-  background-color: #92E1C0;
-  height: 50px;
-/*  margin: 10px 0;
-*/  
+.google-event {
+  background-color: #CFD8DC;
+  border-bottom: 1px solid #FAFAFA;
+
 }
 
-p.weekday {
-background-color: #FAFAFA;
+.free-time {
+  background-color: #92E1C0;
+}
+
+/*am I allowed to do this?*/
+
+.free-time:hover {
+  background-color: #26A69A;
+  transition: all .3s ease-out;
+    h6.num-available {
+      color: #FAFAFA;
+    }
+    p.explore-available {
+      color: #FAFAFA;
+    }
+    small.available-time {
+      color: #FAFAFA;
+    }
 }
 
 div.event-item {
@@ -129,8 +144,24 @@ div.event-item {
   text-align: left;
 }
 
+small.available-time {
+  color: black;
+}
+
 small.event-time {
   font-weight: 700;
+}
+
+h6.num-available {
+  color: black;
+  font-family: Alegreya Sans;
+  font-size: 1.5em;
+}
+
+p.explore-available {
+  color: black;
+  font-family: Alegreya Sans; 
+  font-size: 1.1em;
 }
 
 /* horrible form overriding stuff */
@@ -164,37 +195,6 @@ input#class-name.validate.valid {
   box-shadow: 0 1px 0 0 #92E1C0;;
 }
 
-/*.event {
-  background-color: #5C6BC0;
-  padding-left: 7px;
-}
-
-.three {
-  height: 150px;
-}
-
-.four {
-  height: 200px;
-}
-
-.seven {
-  height: 350px;
-}
-
-.num-classes {
-  background-color: yellow;
-  padding-left: 3px;
-}
-
-.show-classes {
-  text-align: center;
-  height: 60px;
-  padding: 10px 0;
-}
-
-.show-classes a {
-  font-size: 10px;
-}*/
 
 
 
