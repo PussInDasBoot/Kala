@@ -28,13 +28,18 @@ var App = React.createClass({
       this.setState({profile: data})
     }.bind(this));
   },
+  onFilterSubmit: function (filters){
+    $.get("http://localhost:3001/classes_outside_busy_time", filters).done(function(data) {
+      this.setState({classes: data})
+    }.bind(this));
+  },
 
   render() {
     return (
       <div>
         <div id="filters">
           {this.state.studios.length > 0 &&
-          <Filters studios={this.state.studios}/>
+          <Filters studios={this.state.studios} onFilterSubmit={this.onFilterSubmit}/>
           }
         </div>
         <div id="map">
