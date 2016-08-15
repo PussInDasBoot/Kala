@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import Filters from './Filters.jsx';
 import SimpleMap from './Map.jsx';
 import Calendar from './Calendar.jsx';
+import Navbar from './Navbar.jsx';
 import $ from 'jquery';
 import reactMaterialize from 'react-materialize';
 
 var App = React.createClass({
   getInitialState: function () {
-      return {studios: [], classes: [], google_events: []}
+      return {studios: [], classes: [], google_events: [], profile: []}
     },
 
   componentDidMount() {
@@ -24,10 +25,15 @@ var App = React.createClass({
     .done(function(data) {
       this.setState({classes: data})
     }.bind(this));
+    $.get("http://localhost:3001/current_user/info")
+    .done(function(data) {
+      this.setState({profile: data})
+    }.bind(this));
   },
 
   render() {
     console.log(this.state.classes);
+    console.log(this.state.profile);
     return (
       <div>
         <div id="filters">
@@ -38,6 +44,9 @@ var App = React.createClass({
         </div>
         <div id="calendar">
           <Calendar google_events={this.state.google_events} classes={this.state.classes}/>
+        </div>
+        <div id="navbar">
+          <Navbar profile={this.state.profile}/>
         </div>
       </div>
     );

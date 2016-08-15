@@ -1,3 +1,23 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h5 {
+  font-family: Alegreya Sans;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+p {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+/* make this specific to calendar envents */
+div {
+  border-radius: 2.5px;
+}
+
 #calendar, #filters {
   float: left;
   width: 70%;
@@ -6,15 +26,79 @@
 #calendar {
 }
 
-
 #filters {
+  background-color: #FAFAFA;
+  margin-top: 50px;
 }
 
 #map {
   float: right;
   height: 800px;
+  margin-top: 50px;
   width: 30%;
 }
+
+#navbar {
+  height: 50px;
+  background-color: white;
+  border-bottom: 1px solid #CFD8DC;
+  border-radius: 0px;
+  position: fixed;
+  width: 100%;
+}
+
+.logo, .kala-title, .profile-name, .logout {
+  display: inline-block;
+  height: 50px;
+  vertical-align: middle;
+  line-height: 50px;
+  padding: 0 1em;
+}
+
+.logo-image {
+  height: 20px;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+
+.kala-title {
+  border-left: 1px solid #CFD8DC;
+  border-radius: 0px;
+}
+
+span.kala {
+  font-family: Alegreya Sans;
+  font-weight: 500;
+}
+
+
+.profile-name {
+  border-left: 1px solid #CFD8DC;
+  border-radius: 0px;
+  float: right;
+}
+
+.profile-picture {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
+  line-height: 50px;
+  margin-left: 1em;
+}
+
+.logout {
+  border-left: 1px solid #CFD8DC;
+  border-radius: 0px;
+  float: right;
+}
+
+.logout:hover {
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #CFD8DC;
+}
+
+/* calendar stuff */
 
 @media (min-width: 768px) {
 .row-7 {
@@ -24,19 +108,6 @@
     box-sizing: border-box;
     padding: 0 0.5em;
     width: 14.29%; } 
-}
-
-* {
-  font-family: 'Roboto', sans-serif;
-}
-
-p {
-  font-size: 0.9em;
-  margin: 0;
-}
-
-div {
-  border-radius: 2.5px;
 }
 
 .weekday{
@@ -57,6 +128,12 @@ div {
 
 p.weekday {
 background-color: yellow;
+}
+
+/* horrible form overriding stuff */
+
+form {
+  width: 95%;
 }
 
 /*.event {
