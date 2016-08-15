@@ -13,11 +13,6 @@ p {
   margin: 0;
 }
 
-/* make this specific to calendar envents */
-div {
-  border-radius: 2.5px;
-}
-
 #calendar, #filters {
   float: left;
   width: 70%;
@@ -28,7 +23,8 @@ div {
 
 #filters {
   background-color: #FAFAFA;
-  padding-top: 75px;
+  border-bottom: 1px solid #CFD8DC;
+  padding-top: 65px;
 }
 
 #map {
@@ -42,7 +38,6 @@ div {
   height: 50px;
   background-color: white;
   border-bottom: 1px solid #CFD8DC;
-  border-radius: 0px;
   position: fixed;
   width: 100%;
 }
@@ -74,7 +69,6 @@ span.kala {
 
 .profile-name {
   border-left: 1px solid #CFD8DC;
-  border-radius: 0px;
   float: right;
 }
 
@@ -89,7 +83,6 @@ span.kala {
 
 .logout {
   border-left: 1px solid #CFD8DC;
-  border-radius: 0px;
   float: right;
 }
 
@@ -131,7 +124,30 @@ background-color: yellow;
 }
 
 /* horrible form overriding stuff */
+form {
+  padding: 1em;
+}
 
+.form-btn {
+  background-color: #92E1C0;
+  margin-left: 0.75em;
+  margin-top: 1em;
+  padding: 0 1.5rem;
+}
+
+.form-btn:hover {
+  background-color: #26a69a;
+}
+
+#form-btn-text {  
+  color: white;
+  font-family: Alegreya Sans;
+  letter-spacing: 0.25em;
+}
+
+label.radio {
+  margin-right: 1.5em;
+}
 
 /*.event {
   background-color: #5C6BC0;
@@ -151,7 +167,7 @@ background-color: yellow;
 }
 
 .num-classes {
-    background-color: yellow;
+  background-color: yellow;
   padding-left: 3px;
 }
 
@@ -164,4 +180,6 @@ background-color: yellow;
 .show-classes a {
   font-size: 10px;
 }*/
+
+/*border-radius: 2.5px;*/
 
