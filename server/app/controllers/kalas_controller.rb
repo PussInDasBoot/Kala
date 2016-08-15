@@ -33,7 +33,12 @@ class KalasController < ApplicationController
     Time.zone = "America/Vancouver"
     start_time = Time.zone.now
     end_time = (start_time + 1.week).beginning_of_day
-    yoga_classes = YogaClass.where("start_time >= ? AND end_time <= ?", start_time, end_time)
+    yoga_classes = YogaClass.filter(params[:commitment],
+                                    params[:max_price],
+                                    params[:rating],
+                                    params[:class_name],
+                                    params[:studio_name],
+                                    params[:location])
     busy_times = get_busy_times(current_user.email, session[:access_token])
 
     busy_times.each do |busy_time|
