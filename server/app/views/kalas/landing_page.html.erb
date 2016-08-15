@@ -1,56 +1,16 @@
-<h1>Kala Intro Page</h1>
-
-<% if current_user %>
-  <form action="//localhost:3001/classes_outside_busy_time" id="filter-classes">
-    <strong>Commitment</strong><br>
-    Single<input type="radio" name="commitment" value="single">
-    Pass<input type="radio" name="commitment" value="pass">
-    Membership<input type="radio" name="commitment" value="membership"><br>
-    <input type="number" min="0" name="max_price" placeholder="Max Price Per Class"><br>
-
-    <input type="text" placeholder="Class Name" name="class_name"><br>
-
-    <select name="studio_name" form="filter-classes">
-      <option value="" selected>Studio Name</option>
-      <option value="Stretch">Stretch</option>
-      <option value="Karma">Karma</option>
-      <option value="Chopra">Chopra</option>
-      <option value="Form Body Lab">Form Body Lab</option>
-    </select><br>
-
-    <select name="rating" form="filter-classes">
-      <option value="" selected>Studio Rating</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select><br>
-    
-    <select name="location" form="filter-classes">
-      <option value="" selected>Location</option>
-      <option value="Downtown Vancouver">Downtown Vancouver</option>
-      <option value="Kitsilano">Kitsilano</option>
-      <option value="East Vancouver">East Vancouver</option>
-      <option value="Mount Pleasant">Mount Pleasant</option>
-    </select><br>
-
-    <input type="submit" label="Submit">
-  </form>
-<% end %>
-
-<% flash.each do |key, value| %>
-  <h2><%= value %></h2>
-<% end %>
-
-<% if current_user %>
-  <p>Session User ID: <%= session[:user_id] %></p>
-  <p>Session Access Token: <%= session[:access_token] %></p>
-  <p>Session User Email: <%= current_user.email %></p>
-  <%= image_tag(current_user.profile_picture) %>
-<% end %>
-
-<%= link_to "Login", login_path %>
-<% if current_user %>
-  <%= link_to "Logout", logout_path %>
-<% end %>
+<div id="landing-page-holder" class="container center-align">
+  <%= image_tag("kala_logo.png", id: "kala-logo") %>
+  <div class="section">
+    <section id="slogan">
+      Posing yoga classes around your <span>kala</span>nder<br>to help you find
+      the best fit
+     </section>
+  </div>
+  <a id="login-button" class="btn waves-effect waves-light" href="/login"><i class="fa fa-google left material-icons" aria-hidden="true"></i>Login with Google</a>
+  <% if current_user %>
+    <p>Session User ID: <%= session[:user_id] %></p>
+    <p>Session Access Token: <%= session[:access_token] %></p>
+    <p>Session User Email: <%= current_user.email %></p>
+    <%= image_tag(current_user.profile_picture) %>
+  <% end %>
+</div>
