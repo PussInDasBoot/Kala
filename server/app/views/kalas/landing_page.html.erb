@@ -1,7 +1,7 @@
 <h1>Kala Intro Page</h1>
 
 <% if current_user %>
-  <form action="//localhost:3001/filter" id="filter-classes">
+  <form action="//localhost:3001/classes_outside_busy_time" id="filter-classes">
     <strong>Commitment</strong><br>
     Single<input type="radio" name="commitment" value="single">
     Pass<input type="radio" name="commitment" value="pass">
@@ -15,6 +15,7 @@
       <option value="Stretch">Stretch</option>
       <option value="Karma">Karma</option>
       <option value="Chopra">Chopra</option>
+      <option value="Form Body Lab">Form Body Lab</option>
     </select><br>
 
     <select name="rating" form="filter-classes">

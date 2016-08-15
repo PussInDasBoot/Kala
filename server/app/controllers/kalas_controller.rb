@@ -7,22 +7,6 @@ class KalasController < ApplicationController
   def landing_page
   end
 
-  def filter
-    puts "commitment.nil? #{params[:commitment].nil?}"
-    puts "max_price.nil? #{params[:max_price].nil?}"
-    puts "rating.nil? #{params[:rating].nil?}"
-    puts "class_name.nil? #{params[:class_name].nil?}"
-    puts "studio_name.nil? #{params[:studio_name].nil?}"
-    puts "location.nil? #{params[:location].nil?}"
-    yoga_classes = YogaClass.filter(params[:commitment],
-                                    params[:max_price],
-                                    params[:rating],
-                                    params[:class_name],
-                                    params[:studio_name],
-                                    params[:location])
-    render json: yoga_classes
-  end
-
   def get_user_events
     service = Google::Apis::CalendarV3::CalendarService.new
     service.authorization = session[:access_token]
@@ -49,7 +33,12 @@ class KalasController < ApplicationController
     Time.zone = "America/Vancouver"
     start_time = Time.zone.now
     end_time = (start_time + 1.week).beginning_of_day
-    yoga_classes = YogaClass.where("start_time >= ? AND end_time <= ?", start_time, end_time)
+    yoga_classes = YogaClass.filter(params[:commitment],
+                                    params[:max_price],
+                                    params[:rating],
+                                    params[:class_name],
+                                    params[:studio_name],
+                                    params[:location])
     busy_times = get_busy_times(current_user.email, session[:access_token])
 
     busy_times.each do |busy_time|
