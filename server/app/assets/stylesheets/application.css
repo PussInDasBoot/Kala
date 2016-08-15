@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ #login-button {
+  background-color: #DF3A30;
+ }
+
+#landing-page-holder {
+  padding-top: 4.5em;
+}
+  
+ #kala-logo {
+  height: 10em;
+  width: 30em;
+ }
