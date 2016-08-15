@@ -44,6 +44,7 @@ var Filters = React.createClass({
 
           <div className="input-field col s6">
             <select name="studio_name" form="filter-classes">
+            <option value=""></option>
             { this.props.studios.map(function(studio) {
                return <option key={studio.id} value={studio.name}>{studio.name}</option>
              })}
@@ -53,6 +54,7 @@ var Filters = React.createClass({
 
           <div className="input-field col s6">
             <select name="location" form="filter-classes">
+              <option value=""></option>
               <option value="Downtown Vancouver">Downtown Vancouver</option>
               <option value="Kitsilano">Kitsilano</option>
               <option value="Mount Pleasant">Mount Pleasant</option>
@@ -85,7 +87,7 @@ var Filters = React.createClass({
         </div>
      </form>
     );
-    // Could hardcode or get from data
+    // Click event handler on the button that does ajax request for classes: "http://localhost:3001/classes_outside_busy_time" And changes parent state (App) state: classes with the new data.
   }
 })
 export default Filters;
