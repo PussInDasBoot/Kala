@@ -95,33 +95,73 @@ span.kala {
 /* calendar stuff */
 
 @media (min-width: 768px) {
-.row-7 {
-  display: flex; }
+  .row-7 {
+    display: flex; 
+  }
+
   .row-7 .col {
-    border: 1px solid blue;
+    border-left: 1px solid #CFD8DC;
     box-sizing: border-box;
-    padding: 0 0.5em;
-    width: 14.29%; } 
+    width: 14.29%;
+    padding: 0.5em;
+    text-align: center;
+  }
 }
 
 .weekday{
   text-align: center;
 }
 
-.google-class {
-  background-color: #A3E4D7;
-  height: 50px;
-  margin: 10px 0;
+.google-event {
+  background-color: #CFD8DC;
+  border-bottom: 1px solid #FAFAFA;
+
+}
+
+.free-time {
+  background-color: #92E1C0;
+}
+
+/*am I allowed to do this?*/
+
+.free-time:hover {
+  background-color: #26A69A;
+  transition: all .3s ease-out;
+    h6.num-available {
+      color: #FAFAFA;
+    }
+    p.explore-available {
+      color: #FAFAFA;
+    }
+    small.available-time {
+      color: #FAFAFA;
+    }
+}
+
+div.event-item {
+  border-radius: 2px;
   padding-left: 7px;
+  text-align: left;
 }
 
-.one {
-  background-color: #EC407A;
-  height: 50px;
+small.available-time {
+  color: black;
 }
 
-p.weekday {
-background-color: yellow;
+small.event-time {
+  font-weight: 700;
+}
+
+h6.num-available {
+  color: black;
+  font-family: Alegreya Sans;
+  font-size: 1.5em;
+}
+
+p.explore-available {
+  color: black;
+  font-family: Alegreya Sans; 
+  font-size: 1.1em;
 }
 
 /* horrible form overriding stuff */
@@ -137,7 +177,7 @@ form {
 }
 
 .form-btn:hover {
-  background-color: #26a69a;
+  background-color: #26A69A;
 }
 
 #form-btn-text {  
@@ -159,37 +199,5 @@ input#class-name.validate.valid {
   min-height: 50px 
 }
 
-/*.event {
-  background-color: #5C6BC0;
-  padding-left: 7px;
-}
 
-.three {
-  height: 150px;
-}
-
-.four {
-  height: 200px;
-}
-
-.seven {
-  height: 350px;
-}
-
-.num-classes {
-  background-color: yellow;
-  padding-left: 3px;
-}
-
-.show-classes {
-  text-align: center;
-  height: 60px;
-  padding: 10px 0;
-}
-
-.show-classes a {
-  font-size: 10px;
-}*/
-
-/*border-radius: 2.5px;*/
 
