@@ -27,7 +27,7 @@ var App = React.createClass({
   },
 
   render() {
-    console.log(this.state.classes);
+    console.log("classes", this.state.classes);
     return (
       <div>
         <div id="filters">

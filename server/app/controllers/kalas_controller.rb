@@ -1,6 +1,7 @@
 class KalasController < ApplicationController
 
   def show
+    render :layout => false
   end
 
   def landing_page
