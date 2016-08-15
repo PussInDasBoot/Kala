@@ -27,9 +27,14 @@ p {
   padding-top: 65px;
 }
 
+#containter {
+  height: 100%;
+  position: absolute;
+}
+
 #map {
   float: right;
-  height: 800px;
+  height: 1100px;
   margin-top: 50px;
   width: 30%;
 }
@@ -108,8 +113,9 @@ span.kala {
   }
 }
 
-.weekday{
+.weekday-title {
   text-align: center;
+  margin-bottom: 1em;
 }
 
 .google-event {
@@ -155,13 +161,12 @@ small.event-time {
 h6.num-available {
   color: black;
   font-family: Alegreya Sans;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 p.explore-available {
   color: black;
   font-family: Alegreya Sans; 
-  font-size: 1.1em;
 }
 
 /* horrible form overriding stuff */
@@ -169,7 +174,7 @@ form {
   padding: 1em;
 }
 
-.form-btn {
+.form-btn, .form-btn:focus {
   background-color: #92E1C0;
   margin-left: 0.75em;
   margin-top: 1em;

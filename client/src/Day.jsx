@@ -39,12 +39,11 @@ var Day = React.createClass({
     console.log("dayYogaClasses", this.props.yogaClasses);
     var freeEvents = this.freeEventsFinder(this.props.eventsByDay);
     return (
-        <div>
-          <p className="weekday">
-          {freeEvents.map(function(event){
-            return <EventItem event={event} yogaClasses={yogaClasses} />
-          })}</p>
-          
+      <div>
+        <p className="weekday">
+        {freeEvents.map(function(event){
+          return <EventItem event={event} yogaClasses={yogaClasses} />
+        })}</p>      
       </div>
     );
   }
