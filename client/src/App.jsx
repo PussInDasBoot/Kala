@@ -3,8 +3,6 @@ import Filters from './Filters.jsx';
 import SimpleMap from './Map.jsx';
 import Calendar from './Calendar.jsx';
 import Navbar from './Navbar.jsx';
-import $ from 'jquery';
-import reactMaterialize from 'react-materialize';
 
 var App = React.createClass({
   getInitialState: function () {

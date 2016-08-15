@@ -1,61 +1,102 @@
 import React, {Component} from 'react';
-import {Input, Icon, Row, Col} from 'react-materialize';
+
+
 
 var Filters = React.createClass({
-  getInitialState() {
-    return {commitment: ''}
-  },
-  handleChange(e) {
-    this.setState({commitment: e.target.value}, function (){
-    })
+  componentDidMount: function() {
+      $(document).ready(function() {
+          $('select').material_select();
+      });
+      $('#modeselectdiv').on('change', 'select', null, this.handleModeChange);
+      $('#multicompselectdiv').on('change', 'select', null, this.handleMultiCompChange);
   },
   render() {
     return (
-      <form action="//localhost:3001/filter" id="filter-classes">
-        <strong>Commitment</strong><br/>
-    
-        <input id="single" name="commitment" type="radio" value="single" onClick={this.handleChange}/>
-        <label for="single">Single</label>
-      
-       
-        <input id="pass" name="commitment" type="radio" value="pass" label='Pass' onClick={this.handleChange}/>
-        <label for="pass">Pass</label>
-    
-     
-        <input id="membership" name="commitment" type="radio" value="membership" onClick={this.handleChange}/>
-        <label for="membership">Membership</label>
-      
+     <div className="row">
+       <form action="//localhost:3001/filter" id="filter-classes" className="col s12">
+        <div className="row col s12">
+           <p>Commitment Level</p>
+           <p>
+             <input name="commitment" value="single" type="radio" id="commitment1" />
+             <label htmlFor="commitment1">Single</label>
+           </p>
+           <p>
+             <input name="commitment" value="pass" type="radio" id="commitment2" />
+             <label htmlFor="commitment2">Pass</label>
+           </p>
+           <p>
+             <input name="commitment" value="membership" type="radio" id="commitment3" />
+             <label htmlFor="commitment3">Membership</label>
+           </p>
+        </div>
 
-        <input type="number" min="0" name="max_price" placeholder="Max Price Per Class"/><br/>
+        <div className="row">
+          <p className="range-field col s12">
+          <p>Maximum Price</p>
+            <input type="range" id="price-slider" min="0" max="100" name="max_price"/>
+          </p>
+        </div>
 
-        <input type="text" placeholder="Class Name" name="class_name"/><br/>
+        <div className="row"> 
+          <div className="input-field col s12">
+            <select name="location" form="filter-classes">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="Downtown Vancouver">Downtown Vancouver</option>
+              <option value="Kitsilano">Kitsilano</option>
+              <option value="Mount Pleasant">Mount Pleasant</option>
+            </select>
+            <label>Select Location</label>
+          </div>
+        </div> 
 
-        <select name="studio_name" form="filter-classes">
-          <option value="" selected>Studio Name</option>
-          <option value="Stretch">Stretch</option>
-          <option value="Karma">Karma</option>
-          <option value="Chopra">Chopra</option>
-        </select><br/>
+        <div className="row">
+          <div className="input-field col s12">
+            <input name="class_name" id="class-name" type="text" className="validate" placeholder="Class Name"/>
+            <label htmlFor="class-name">Class Name</label>
+          </div>
+        </div> 
 
-        <select name="rating" form="filter-classes">
-          <option value="" selected>Studio Rating</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select><br/>
-        
-        <select name="location" form="filter-classes">
-          <option value="" selected>Location</option>
-          <option value="Downtown Vancouver">Downtown Vancouver</option>
-          <option value="Kitsilano">Kitsilano</option>
-          <option value="East Vancouver">East Vancouver</option>
-          <option value="Mount Pleasant">Mount Pleasant</option>
-        </select><br/>
+        <div className="row">
+          <div className="input-field col s12">
+            <select name="studio_name" form="filter-classes">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="Stretch">Stretch</option>
+              <option value="Karma">Karma</option>
+              <option value="Chopra">Chopra</option>
+            </select>
+            <label>Select Studio</label>
+          </div>
+        </div>
 
-        <input type="submit" label="Submit"/>
-      </form>
+        <div className="row col s12">
+          <p>Minimum Rating</p>
+            <p>
+             <input name="rating" value="1" type="radio" id="rating1" />
+             <label htmlFor="rating1">1</label>
+            </p>  
+            <p>
+             <input name="rating" value="2" type="radio" id="rating2" />
+             <label htmlFor="rating2">2</label>
+            </p>  
+            <p>
+             <input name="rating" value="3" type="radio" id="rating3" />
+             <label htmlFor="rating3">3</label>
+            </p>  
+            <p>
+             <input name="rating" value="4" type="radio" id="rating4" />
+             <label htmlFor="rating4">4</label>
+            </p>  
+            <p>  
+             <input name="rating" value="5" type="radio" id="rating5" />
+             <label htmlFor="rating5">5</label>
+           </p>
+        </div>
+
+        <div className="row"> 
+         <input type="submit" label="Submit"/>
+        </div>
+       </form>
+     </div>
     );
     // Could hardcode or get from data
   }

@@ -28,7 +28,7 @@ div {
 
 #filters {
   background-color: #FAFAFA;
-  margin-top: 50px;
+  padding-top: 75px;
 }
 
 #map {
@@ -58,7 +58,7 @@ div {
 .logo-image {
   height: 20px;
   vertical-align: middle;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .kala-title {
@@ -132,9 +132,6 @@ background-color: yellow;
 
 /* horrible form overriding stuff */
 
-form {
-  width: 95%;
-}
 
 /*.event {
   background-color: #5C6BC0;
