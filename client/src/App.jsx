@@ -34,7 +34,9 @@ var App = React.createClass({
     return (
       <div>
         <div id="filters">
+          {this.state.studios.length > 0 &&
           <Filters studios={this.state.studios}/>
+          }
         </div>
         <div id="map">
           <SimpleMap studios={this.state.studios}/>

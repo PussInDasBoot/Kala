@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 
 
 var Filters = React.createClass({
+
   componentDidMount: function() {
     $(document).ready(function() {
         $('select').material_select();
@@ -11,10 +12,10 @@ var Filters = React.createClass({
 
   render() {
     return (
-      <form action="//localhost:3001/filter" id="filter-classes">
+      <form action="//localhost:3001/classes_outside_busy_time" id="filter-classes">
         <div className="row">
           <div className="col s6">
-            <label>Commitment Level</label>
+            <label>Choose a level of commitment:</label>
             <p>
               <input name="commitment" value="single" type="radio" id="commitment1" />
               <label htmlFor="commitment1">Single</label>
@@ -44,7 +45,7 @@ var Filters = React.createClass({
           <div className="input-field col s6">
             <select name="studio_name" form="filter-classes">
             { this.props.studios.map(function(studio) {
-               return <option key={studio.id} name={studio.name} value='1'>{studio.name}</option>
+               return <option key={studio.id} value={studio.name}>{studio.name}</option>
              })}
             </select>
             <label>Select Studio</label>
@@ -52,7 +53,6 @@ var Filters = React.createClass({
 
           <div className="input-field col s6">
             <select name="location" form="filter-classes">
-              <option value="" disabled selected>Choose your option</option>
               <option value="Downtown Vancouver">Downtown Vancouver</option>
               <option value="Kitsilano">Kitsilano</option>
               <option value="Mount Pleasant">Mount Pleasant</option>
