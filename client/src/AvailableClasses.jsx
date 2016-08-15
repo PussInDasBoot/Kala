@@ -7,14 +7,16 @@ var AvailableClasses = React.createClass({
       return {class: []}
     },
     // Figuring out how to add the handle click event to the a tag
-  handleClick: function (props) {
-    $.get("http://localhost:3001/yoga_classes/"+props.id)
+  handleClick: function (id) {
+    $.get("http://localhost:3001/yoga_classes/"+id)
     .done(function(data) {
       this.setState({class: data})
+      console.log("data", this.state.class);
     }.bind(this));
   },
   render() {
-    console.log(this.props.yoga_classes)
+    var me = this;
+    // console.log(this.props.yoga_classes);
     return (
       <div id={this.props.modalid} className="modal">
         <div className="modal-content">
@@ -30,7 +32,7 @@ var AvailableClasses = React.createClass({
                           <p>{moment(yogaclass.start_time).format('h:mm a')} - {moment(yogaclass.end_time).format('h:mm a')}</p>
                         </div>
                         <div className="card-action">
-                          <a href="#" key={yogaclass.id}>See more information</a>
+                          <a href="#" onClick={me.handleClick.bind(this, yogaclass.id)} key={yogaclass.id}>See more information</a>
                         </div>
                       </div>
                     </div>
