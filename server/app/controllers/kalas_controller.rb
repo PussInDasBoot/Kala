@@ -1,10 +1,11 @@
 class KalasController < ApplicationController
 
   def show
-    render :layout => false
-  end
-
-  def landing_page
+    if user_signed_in?
+      render "show", layout: false
+    else
+      render "landing_page"
+    end
   end
 
   def get_user_events

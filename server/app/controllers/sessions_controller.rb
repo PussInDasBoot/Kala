@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     session[:access_token] = @user.access_token
     self.current_user
 
-    redirect_to kala_path
+    redirect_to root_url
   end
 
   def destroy
