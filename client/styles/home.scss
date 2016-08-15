@@ -150,6 +150,12 @@ label.radio {
   margin-right: 1.5em;
 }
 
+input#class-name.validate.valid {
+  border-bottom: 1px solid #92E1C0;
+  box-shadow: 0 1px 0 0 #92E1C0;;
+}
+
+
 /*.event {
   background-color: #5C6BC0;
   padding-left: 7px;
