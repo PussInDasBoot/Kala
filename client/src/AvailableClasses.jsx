@@ -1,22 +1,22 @@
 import React, {Component} from 'react';
 import moment from 'moment';
+import Show from './Show.jsx';
 
 
 var AvailableClasses = React.createClass({
   getInitialState: function () {
-      return {class: []}
+      return {class: [], studio: [], clicked: false}
     },
     // Figuring out how to add the handle click event to the a tag
   handleClick: function (id) {
     $.get("http://localhost:3001/yoga_classes/"+id)
     .done(function(data) {
-      this.setState({class: data})
-      console.log("data", this.state.class);
+      this.setState({class: data[0], studio: data[1], clicked: true})
+      console.log("data", data);
     }.bind(this));
   },
   render() {
     var me = this;
-    // console.log(this.props.yoga_classes);
     return (
       <div id={this.props.modalid} className="modal">
         <div className="modal-content">
@@ -39,7 +39,11 @@ var AvailableClasses = React.createClass({
                   </div>)
                 })}
               </div>
-              <div className="col s6">Another column</div>
+              <div className="col s6">
+                <span style={{visibility: this.state.clicked ? "visible" : "hidden"}}>
+                <Show classinfo={this.state.class} studio={this.state.studio}/>
+                </span>
+              </div>
             </div>
 
           

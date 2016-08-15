@@ -45,12 +45,12 @@ var Filters = React.createClass({
               <label htmlFor="commitment1">Single</label>
             </p>
             <p>
-              <input ref={(el) => {this.commitments[1] = el;}} name="commitment" value="pass" type="radio" id="commitment2" />
-              <label htmlFor="commitment2" onClick={this.handleChange}>Pass</label>
+              <input ref={(el) => {this.commitments[1] = el;}} name="commitment" value="pass" type="radio" id="commitment2" onClick={this.handleChange}/>
+              <label htmlFor="commitment2">Pass</label>
             </p>
             <p>
-              <input ref={(el) => {this.commitments[2] = el;}} name="commitment" value="membership" type="radio" id="commitment3" />
-              <label htmlFor="commitment3" onClick={this.handleChange}>Membership</label>
+              <input ref={(el) => {this.commitments[2] = el;}} name="commitment" value="membership" type="radio" id="commitment3" onClick={this.handleChange}/>
+              <label htmlFor="commitment3">Membership</label>
             </p>
           </div>
           
@@ -92,20 +92,17 @@ var Filters = React.createClass({
           <div className="col s6">
             <label>Minimum Rating</label>
               <p>
-              <input ref={(el) => {this.ratings[0] = el;}} name="rating" value="1" type="radio" id="rating1" />
+              <input ref={(el) => {this.ratings[0] = el;}} onClick={this.handleChange} name="rating" value="1" type="radio" id="rating1" />
               <label className="radio" htmlFor="rating1">1</label>
 
-              <input ref={(el) => {this.ratings[1] = el;}} name="rating" value="2" type="radio" id="rating2" />
+              <input ref={(el) => {this.ratings[1] = el;}} onClick={this.handleChange} name="rating" value="2" type="radio" id="rating2" />
               <label className="radio" htmlFor="rating2">2</label>
 
-              <input ref={(el) => {this.ratings[2] = el;}} name="rating" value="3" type="radio" id="rating3" />
+              <input ref={(el) => {this.ratings[2] = el;}} onClick={this.handleChange} name="rating" value="3" type="radio" id="rating3" />
               <label className="radio" htmlFor="rating3">3</label>
 
-              <input ref={(el) => {this.ratings[3] = el;}} name="rating" value="4" type="radio" id="rating4" />
+              <input ref={(el) => {this.ratings[3] = el;}} onClick={this.handleChange} name="rating" value="4" type="radio" id="rating4" />
               <label className="radio" htmlFor="rating4">4</label>
-
-              <input ref={(el) => {this.ratings[4] = el;}} name="rating" value="5" type="radio" id="rating5" />
-              <label className="radio" htmlFor="rating5">5</label>
              </p>
           </div>
           
