@@ -7,10 +7,4 @@
      </section>
   </div>
   <a id="login-button" class="btn waves-effect waves-light" href="/login"><i class="fa fa-google left material-icons" aria-hidden="true"></i>Login with Google</a>
-  <% if current_user %>
-    <p>Session User ID: <%= session[:user_id] %></p>
-    <p>Session Access Token: <%= session[:access_token] %></p>
-    <p>Session User Email: <%= current_user.email %></p>
-    <%= image_tag(current_user.profile_picture) %>
-  <% end %>
 </div>
