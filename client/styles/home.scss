@@ -95,13 +95,17 @@ span.kala {
 /* calendar stuff */
 
 @media (min-width: 768px) {
-.row-7 {
-  display: flex; }
+  .row-7 {
+    display: flex; 
+  }
+
   .row-7 .col {
-    border: 1px solid blue;
+    border-left: 1px solid #CFD8DC;
     box-sizing: border-box;
-    padding: 0 0.5em;
-    width: 14.29%; } 
+    width: 14.29%;
+    padding: 0.5em;
+    text-align: center;
+  }
 }
 
 .weekday{
@@ -109,19 +113,24 @@ span.kala {
 }
 
 .google-class {
-  background-color: #A3E4D7;
+  background-color: #92E1C0;
   height: 50px;
-  margin: 10px 0;
-  padding-left: 7px;
-}
-
-.one {
-  background-color: #EC407A;
-  height: 50px;
+/*  margin: 10px 0;
+*/  
 }
 
 p.weekday {
-background-color: yellow;
+background-color: #FAFAFA;
+}
+
+div.event-item {
+  border-radius: 2px;
+  padding-left: 7px;
+  text-align: left;
+}
+
+small.event-time {
+  font-weight: 700;
 }
 
 /* horrible form overriding stuff */
@@ -137,7 +146,7 @@ form {
 }
 
 .form-btn:hover {
-  background-color: #26a69a;
+  background-color: #26A69A;
 }
 
 #form-btn-text {  
@@ -187,5 +196,5 @@ input#class-name.validate.valid {
   font-size: 10px;
 }*/
 
-/*border-radius: 2.5px;*/
+
 
