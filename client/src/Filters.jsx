@@ -3,13 +3,19 @@ import React, {Component} from 'react';
 
 
 var Filters = React.createClass({
-
+  getInitialState: function (){
+    return {commitment: []}
+  },
   componentDidMount: function() {
     $(document).ready(function() {
         $('select').material_select();
     });
   },
-
+  handleChange(e) {
+    this.setState({commitment: e.target.value}, function (){
+      console.log(this.state)
+    })
+  },
   render() {
     return (
       <form action="//localhost:3001/classes_outside_busy_time" id="filter-classes">
@@ -17,26 +23,29 @@ var Filters = React.createClass({
           <div className="col s6">
             <label>Choose a level of commitment:</label>
             <p>
-              <input name="commitment" value="single" type="radio" id="commitment1" />
+              <input name="commitment" value="single" type="radio" id="commitment1" onClick={this.handleChange}/>
               <label htmlFor="commitment1">Single</label>
             </p>
             <p>
               <input name="commitment" value="pass" type="radio" id="commitment2" />
-              <label htmlFor="commitment2">Pass</label>
+              <label htmlFor="commitment2" onClick={this.handleChange}>Pass</label>
             </p>
             <p>
               <input name="commitment" value="membership" type="radio" id="commitment3" />
-              <label htmlFor="commitment3">Membership</label>
+              <label htmlFor="commitment3" onClick={this.handleChange}>Membership</label>
             </p>
           </div>
-
+          
           <div className="col s6">
             <p className="range-field">
+            {this.state.commitment.length >0 &&
+              <span>
             <label>Maximum Price</label>
               <input type="range" id="price-slider" min="0" max="50" name="max_price"/>
+              </span>
+              }
             </p>
           </div>
-
           <div className="input-field col s6">
             <input name="class_name" id="class-name" type="text" className="validate" placeholder="Class Name"/>
             <label htmlFor="class-name">Class Name</label>
