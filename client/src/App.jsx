@@ -30,7 +30,6 @@ var App = React.createClass({
   },
 
   render() {
-
     return (
       <div>
         <div id="filters">

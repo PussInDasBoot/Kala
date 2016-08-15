@@ -1,22 +1,32 @@
 class YogaClass < ApplicationRecord
   belongs_to :studio
 
+  def self.filter(commitment, max_price, rating, class_name, studio_name, location)
+    Time.zone = "America/Vancouver"
+    start_time = Time.zone.now
+    end_time = (start_time + 1.week).beginning_of_day
+    yoga_classes = self.where('start_time >= ? AND end_time <= ?', start_time, end_time)
 
-  def self.search(commitment=nil, rating=nil, pricemax=nil, name=nil, studioname=nil, location=nil)
-    classes = self.where('name like ?', name) if name   
-    classes = self.joins(:studio).where('studios.name like ?', studioname) if studioname
-    classes = self.joins(:studio).where('studios.rating > ?', rating) if rating
-    classes = self.joins(:studio).where('studios.location like ?', location) if location
-    if commitment && pricemax
+    yoga_classes = yoga_classes.where('name ILIKE ?', "%#{class_name}%") unless self.invalid_form_field?(class_name)   
+    yoga_classes = yoga_classes.joins(:studio).where('studios.name = ?', studio_name) unless self.invalid_form_field?(studio_name)
+    yoga_classes = yoga_classes.joins(:studio).where('studios.rating > ?', rating.to_f) unless self.invalid_form_field?(rating)
+    yoga_classes = yoga_classes.joins(:studio).where('studios.location = ?', location) unless self.invalid_form_field?(location)
+    unless self.invalid_form_field?(commitment) || self.invalid_form_field?(max_price)
       case commitment
       when "single"
-        classes = self.joins(:studio).where('studios.drop_in_price < ?', pricemax)
+        yoga_classes = yoga_classes.joins(:studio).where('studios.drop_in_price <= ?', max_price.to_f)
       when "pass"
-        classes = self.joins(:studio).where('studios.pass_average < ?', pricemax)
+        yoga_classes = yoga_classes.joins(:studio).where('studios.pass_average <= ?', max_price.to_f)
       when "membership"
-        classes = self.joins(:studio).where('studios.membership_average < ?', pricemax)
+        yoga_classes = yoga_classes.joins(:studio).where('studios.membership_average <= ?', max_price.to_f)
       end
     end
+
+    yoga_classes.order(:start_time)
+  end
+
+  def self.invalid_form_field?(form_field)
+    form_field.nil? || form_field.empty?
   end
 
   def convert_to_calendar_event
@@ -39,6 +49,7 @@ class YogaClass < ApplicationRecord
     \nPass Average: $#{'%.02f' % studio.pass_average} \
     \nMembership Average: $#{'%.02f' % studio.membership_average}"
   end
+
 end
 
 
