@@ -5,3 +5,4 @@ server/tmp/cache
 server/.DS_Store
 server/app/.DS_Store
 server/app/assets/.DS_Store
+server/tmp/pids
