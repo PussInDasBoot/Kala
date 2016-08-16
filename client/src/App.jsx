@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import Filters from './Filters.jsx';
 import SimpleMap from './Map.jsx';
+import CalendarHeader from './CalendarHeader.jsx';
 import Calendar from './Calendar.jsx';
 import Navbar from './Navbar.jsx';
+
 
 var App = React.createClass({
   getInitialState: function () {
@@ -44,6 +46,9 @@ var App = React.createClass({
         </div>
         <div id="map">
           <SimpleMap studios={this.state.studios}/>
+        </div>
+        <div id="calendar-header">
+          <CalendarHeader studios={this.state.google_events}/>
         </div>
         <div id="calendar">
           <Calendar google_events={this.state.google_events} classes={this.state.classes}/>
