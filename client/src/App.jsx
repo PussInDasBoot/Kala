@@ -47,9 +47,6 @@ var App = React.createClass({
         <div id="map">
           <SimpleMap studios={this.state.studios}/>
         </div>
-        <div id="calendar-header">
-          <CalendarHeader studios={this.state.google_events}/>
-        </div>
         <div id="calendar">
           <Calendar google_events={this.state.google_events} classes={this.state.classes}/>
         </div>
