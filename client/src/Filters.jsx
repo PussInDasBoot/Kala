@@ -50,7 +50,7 @@ var Filters = React.createClass({
           <div className="col s6">
             <label>Choose a level of commitment:</label>
             <p>
-              <a className="tooltipped" data-position="right" data-delay="50" data-tooltip={singleToolTip}>
+              <a className="tooltipped" data-position="right" data-delay="50" data-customcss="yellow" data-tooltip={singleToolTip}>
                 <input ref={(el) => {this.commitments[0] = el;}} name="commitment" value="single" type="radio" id="commitment1" onClick={this.handleChange}/>
                 <label htmlFor="commitment1">Single</label>
               </a>
