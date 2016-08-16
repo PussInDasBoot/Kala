@@ -22,10 +22,15 @@ var Show = React.createClass({
                 <li className="collection-item"><span className="price">${this.props.studio.membership_average} / class</span>Average price for memberships</li>
               </ul>
               
-              <p>{this.props.studio.address}</p>  
+              <p>{this.props.studio.address}</p>
+
+              <div className="chip-placeholder">
               {this.props.studio.rating &&
-              <p className="rating">Google+ Rating: {this.props.studio.rating}</p>
+              <div className="chip"> 
+                <p className="rating">Google+ Rating {this.props.studio.rating}</p>
+              </div>
               } 
+              </div>
             </div>
             <div className="card-action">
               <a href="#">Copy to my google calendar</a>

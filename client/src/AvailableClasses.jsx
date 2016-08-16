@@ -40,13 +40,11 @@ var AvailableClasses = React.createClass({
                 <Show classinfo={this.state.class} studio={this.state.studio}/>
                 </span>
               </div>
-            </div>
 
-          
-          
-        </div>
-        <div className="modal-footer">
-          <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+              <div className="modal-footer">
+                <a id="modal-close-text" href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+              </div>
+            </div>  
         </div>
       </div>
     )

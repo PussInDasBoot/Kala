@@ -259,6 +259,10 @@ li.collection-item {
   padding-right: 1em;
 }
 
+.card .card-content p.card-title{
+  margin-top: 1em;
+}
+
 .card .card-content p.studio {
   text-align: left;
 }
@@ -266,4 +270,36 @@ li.collection-item {
 .card .card-content p.studio span.instructor {
   float: right;
 }
+
+.chip {
+  background-color: #FFF9C4;
+  margin-top: 12px;
+}
+
+.chip p.rating {
+  color: #FFC107;
+  font-weight: 400;
+}
+
+.chip-placeholder {
+  min-height: 49px;
+}
+
+.modal-close {
+  background-color: #D1C4E9;
+}
+
+.modal-close:hover, .modal-close:focus {
+  background-color: #B39DDB;
+}
+
+#modal-close-text {
+  color: white;
+  font-family: Alegreya Sans;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+}
+
+
+
 
