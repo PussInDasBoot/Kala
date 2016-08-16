@@ -14,12 +14,21 @@
  *= require_self
  */
 
- span {
-  color: #DF3A30;
+ span.kala {
+  font-family: Alegreya Sans; 
+  font-size: 1.25em;
+  font-weight: 500;
+ }
+
+ span.nder {
+  font-family: Alegreya Sans; 
+  font-size: 1.25em;
+  font-weight: 300;
  }
 
  #login-button {
   background-color: #DF3A30;
+  margin-top: 1.25em;
  }
 
 #landing-page-holder {
@@ -27,8 +36,9 @@
 }
   
  #kala-logo {
-  height: 10em;
-  width: 30em;
+  height: 13em;
+  margin-bottom: 1.25em;
+  width: 39em;
  }
 
  #slogan {

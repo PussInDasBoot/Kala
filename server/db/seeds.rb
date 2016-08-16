@@ -13,14 +13,14 @@ require 'pry'
 STRETCH_GOOGLE_URL = "https://www.google.ca/maps/place/STRETCH/@49.2815951,-123.1106868,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0xea26241ef714b4b1!8m2!3d49.2803152!4d-123.1006506"
 ONE_YOGA_GOOGLE_URL = "https://www.google.ca/maps/place/One+Yoga+for+the+People/@49.2825421,-123.1108251,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0xf9cbcc9287a71c52!8m2!3d49.2822688!4d-123.1086369"
 ONE_HOUR_HOT_YOGA_GOOGLE_URL = "https://www.google.ca/maps/place/One+hour+hot+yoga/@49.2765517,-123.1296538,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x30146048e3582e8e!8m2!3d49.2754392!4d-123.1243828"
-OXYGEN_GOOGLE_URL = "https://www.google.ca/maps/place/Oxygen+Yoga+%26+Fitness+Yaletown/@49.2782314,-123.1243967,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x5c576536f8bcabf3!8m2!3d49.2793257!4d-123.119536"
-FORM_BODY_LAB_GOOGLE_URL = "https://www.google.ca/maps/place/Form+Body+Lab/@49.2782314,-123.1243967,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0xc3572a07d6b861f!8m2!3d49.2770203!4d-123.1200685"
-DHARMA_GOOGLE_URL = "https://www.google.ca/maps/place/Dharma+Yoga+Vancouver/@49.2782314,-123.1243967,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x39e24611aac17acb!8m2!3d49.275637!4d-123.1191994"
-WESTCOAST_HOT_YOGA_GOOGLE_URL = "https://www.google.ca/maps/place/WestCoast+hot+Yoga/@49.2782314,-123.1243967,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x2c8ed35e2b3e1328!8m2!3d49.2751934!4d-123.1208986"
+OXYGEN_GOOGLE_URL = "https://www.google.ca/maps/place/Oxygen+Yoga+%26+Fitness+Yaletown/@49.2793259,-123.1217297,17z/data=!3m1!4b1!4m5!3m4!1s0x5486717e17ef059b:0x5c576536f8bcabf3!8m2!3d49.2793259!4d-123.1195357"
+FORM_BODY_LAB_GOOGLE_URL = "https://www.google.ca/maps/place/Form+Body+Lab/@49.2770202,-123.1222619,17z/data=!3m1!4b1!4m5!3m4!1s0x548673d60d062a7b:0xc3572a07d6b861f!8m2!3d49.2770202!4d-123.1200679"
+DHARMA_GOOGLE_URL = "https://www.google.ca/maps/place/Dharma+Yoga+Vancouver/@49.2756366,-123.121394,17z/data=!3m1!4b1!4m5!3m4!1s0x548673d64eb346b1:0x39e24611aac17acb!8m2!3d49.2756366!4d-123.1192"
+WESTCOAST_HOT_YOGA_GOOGLE_URL = "https://www.google.ca/maps/place/WestCoast+hot+Yoga/@49.2751926,-123.1230927,17z/data=!3m1!4b1!4m5!3m4!1s0x410b7dd4fa396797:0x2c8ed35e2b3e1328!8m2!3d49.2751926!4d-123.1208987"
 CHOPRA_GOOGLE_URL = "https://www.google.ca/maps/place/Chopra+Yoga+Center/@49.2824722,-123.1185499,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x9d64dca4be18a9d0!8m2!3d49.2850026!4d-123.1146571"
 YOGA_WEST_GOOGLE_URL = "https://www.google.ca/maps/place/Yoga+West/@49.2676104,-123.1683701,17z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0xd15af8ee9d8e7fbe!8m2!3d49.268201!4d-123.1652758"
 MOKSHA_YOGA_GOOGLE_URL = "https://www.google.ca/maps/place/Moksha+Yoga/@49.2617199,-123.1946486,15z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0xc44a138e733925cd!8m2!3d49.2680198!4d-123.1863901"
-JUST_YOGA_GOOGLE_URL = "https://www.google.ca/maps/place/just+yoga/@49.2624452,-123.1093269,15z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x4200573ccd7ffe40!8m2!3d49.2631243!4d-123.1035528"
+JUST_YOGA_GOOGLE_URL = "https://www.google.ca/maps/place/just+yoga/@49.2631249,-123.1057471,17z/data=!3m1!4b1!4m5!3m4!1s0x548673e1ac60683f:0x4200573ccd7ffe40!8m2!3d49.2631249!4d-123.1035531"
 MOKSHA_EAST_GOOGLE_URL = "https://www.google.ca/maps/place/Moksha+Yoga+East+Vancouver/@49.2624452,-123.1093269,15z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x85906c99ca87f176!8m2!3d49.2571867!4d-123.0925423"
 YOGACARA_GOOGLE_URL = "https://www.google.ca/maps/place/Yogacara+Studios+%7C+Mount+Pleasant+Yoga/@49.2624172,-123.0934053,15z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x2c5cf301870c22c8!8m2!3d49.2547918!4d-123.0901685"
 BIKRAM_GOOGLE_URL = "https://www.google.ca/maps/place/Bikram's+Yoga+College-India/@49.2777333,-123.0741363,16z/data=!4m8!1m2!2m1!1syoga!3m4!1s0x0:0x9b805c913dbb2f5c!8m2!3d49.2746308!4d-123.0697663"
@@ -86,7 +86,7 @@ def get_lat(google_url)
 end
 
 def get_lng(google_url)
-  google_url.scan(/-123.\d{7}/).first
+  google_url.scan(/-123.\d{6,7}/).first
 end
 ## END OF HELPER METHODS ##
 

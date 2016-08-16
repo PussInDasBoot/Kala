@@ -24,29 +24,27 @@ var AvailableClasses = React.createClass({
       <div ref={(el) => {this.modalContainer = el}} id={this.props.modalid} className="modal">
         <div className="modal-content">
             <div className="row">
-              <div className="col s4">
+              <div className="col s5 module-col">
                 {this.props.yoga_classes.map(function(yogaclass){
                 return ( 
-                  <div className="google-event event-item">
-                    <p><small className="event-time">{moment(yogaclass.start_time).format('h:mm a')} - {moment(yogaclass.end_time).format('h:mm a')}</small><br/>
-                    {yogaclass.name}</p>
-                    <a href="#" onClick={me.handleClick.bind(this, yogaclass.id)} key={yogaclass.id}>See more information</a>
+                  <div className="event-item mindbody-event">
+                    <p className="event-time-module">{moment(yogaclass.start_time).format('h:mm a')} - {moment(yogaclass.end_time).format('h:mm a')}</p>
+                    <p className="yoga-class-name">{yogaclass.name}</p>
+                    <a className="mindbody-event-link"href="#" onClick={me.handleClick.bind(this, yogaclass.id)} key={yogaclass.id}>See more information</a>
                   </div>
                 )
                 })}
               </div>
-              <div className="col s8">
+              <div className="col s7 module-col">
                 <span style={{visibility: this.state.clicked ? "visible" : "hidden"}}>
                 <Show classinfo={this.state.class} studio={this.state.studio}/>
                 </span>
               </div>
-            </div>
 
-          
-          
-        </div>
-        <div className="modal-footer">
-          <a href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+              <div className="modal-footer">
+                <a id="modal-close-text" href="#!" className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+              </div>
+            </div>  
         </div>
       </div>
     )

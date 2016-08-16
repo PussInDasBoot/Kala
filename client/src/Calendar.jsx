@@ -47,14 +47,14 @@ var Calendar = React.createClass({
         weekdaysNumber -= 7;
       }
       dayColumns.push((
-        <div className="col">{moment.weekdays(weekdaysNumber)}
+        <div className="col">
           <Day eventsByDay={eventsByDay[weekdaysNumber] || []} yogaClasses={yogaClassesByDay[weekdaysNumber] || []}/>
         </div>
         ));
     }
     return (
-        <div className="row-7">
-          {dayColumns}
+      <div className="row-7">
+        {dayColumns}
       </div>
     );
   }
