@@ -3,9 +3,15 @@ import moment from 'moment';
 
 
 var Show = React.createClass({
-  // Don't show if modal ID changes?
+  handleClick: function (id, event) {
+    // event.preventDefault();
+    $.get("http://localhost:3001/add_class_to_calendar/"+id)
+    .done(function(data) {
+      
+    }.bind(this));
+  },
   render() {
-    console.log(this.props.studio.rating);
+    var me = this;
     return (
       <div className="row">
         <div className="col s12 m12">
@@ -22,6 +28,7 @@ var Show = React.createClass({
               <p>Drop in price: ${this.props.studio.drop_in_price}</p>
               <p>Average per class price for passes: ${this.props.studio.pass_average}</p>
               <p>Average per class price for memberships: ${this.props.studio.membership_average}</p>
+              <a class="waves-effect waves-teal btn-flat" onClick={me.handleClick.bind(this, this.props.classinfo.id)}>Add to calendar</a>
             </div>
           </div>
         </div>
