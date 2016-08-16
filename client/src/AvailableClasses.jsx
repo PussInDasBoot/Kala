@@ -37,7 +37,7 @@ var AvailableClasses = React.createClass({
               </div>
               <div className="col s7 module-col">
                 <span style={{visibility: this.state.clicked ? "visible" : "hidden"}}>
-                <Show classinfo={this.state.class} studio={this.state.studio}/>
+                <Show classinfo={this.state.class} studio={this.state.studio} modalid={this.props.modalid}/>
                 </span>
               </div>
 
