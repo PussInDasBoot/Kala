@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Filters from './Filters.jsx';
 import SimpleMap from './Map.jsx';
-import CalendarHeader from './CalendarHeader.jsx';
 import Calendar from './Calendar.jsx';
 import Navbar from './Navbar.jsx';
 

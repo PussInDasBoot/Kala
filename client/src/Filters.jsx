@@ -117,7 +117,7 @@ var Filters = React.createClass({
              </p>
           </div>
           
-          <input id="form-btn-text" className="waves-effect waves-light btn-flat form-btn" type="submit" label="Filter"/>
+          <input id="form-btn-text" className="waves-effect waves-light btn-flat form-btn" type="submit" label="Filter" />
         </div>
      </form>
     );

@@ -162,8 +162,6 @@ span.kala {
   color: #EF9A9A;
 }
 
-
-
 .google-event {
   background-color: #CFD8DC;
   border-bottom: 1px solid #FAFAFA;
@@ -171,6 +169,7 @@ span.kala {
 
 .free-time {
   background-color: #92E1C0;
+  border-bottom: 1px solid #FAFAFA;
 }
 
 /*am I allowed to do this?*/
@@ -260,8 +259,9 @@ input#class-name.validate.valid {
   padding-right: 1em;
 }
 
-.card .card-content p.card-title{
-  margin-top: 1em;
+.card .card-content p.card-time {
+  font-size: 1.25em;
+  margin-top: 2.25em; 
 }
 
 .card .card-content p.studio {
