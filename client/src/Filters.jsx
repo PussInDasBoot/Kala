@@ -24,14 +24,14 @@ var Filters = React.createClass({
         return input.checked;
       }) || {}).value
     }, function (){
-      console.log(this.state);
     }.bind(this));
 
   },
   handleFormSubmit (e) {
     e.preventDefault();
     $("#filter-classes")[0].reset();
-
+    $("#max-price").css('visibility', 'hidden');
+    this.setState({max_price: undefined});
     this.props.onFilterSubmit(this.state);
   },
   render() {
@@ -67,7 +67,7 @@ var Filters = React.createClass({
           
           <div className="col s6">
             <p className="range-field">
-              <span style={{visibility: this.state.commitment ? "visible" : "hidden"}}>
+              <span id="max-price"style={{visibility: this.state.commitment ? "visible" : "hidden"}}>
             <label>Maximum Price</label>
               <input ref={(el) => {this.max_price = el}} type="range" id="price-slider" min="5" max="30" name="max_price" onChange={this.handleChange}/>
               </span>
