@@ -4,11 +4,11 @@ import moment from 'moment';
 
 var Show = React.createClass({
   handleClick: function (id, event) {
-    // event.preventDefault();
+    event.preventDefault();
     $.get("http://localhost:3001/add_class_to_calendar/"+id)
     .done(function(data) {
-      
     }.bind(this));
+    
   },
   render() {
     var me = this;
@@ -20,6 +20,7 @@ var Show = React.createClass({
               <p className="studio"><strong>{this.props.studio.name}</strong>
               <span className="instructor">{this.props.classinfo.instructor_name}</span>
               </p>
+              <p className="">{moment(this.props.classinfo.start_time).format('h:mm a')} - {moment(this.props.classinfo.end_time).format('h:mm a')} </p>
               <p className="card-title">{this.props.classinfo.name}</p>
         
               <ul className="collection">
@@ -39,7 +40,7 @@ var Show = React.createClass({
               </div>
             </div>
             <div className="card-action">
-              <a href="#">Copy to my google calendar</a>
+              <a href="#" onClick={me.handleClick.bind(this, this.props.classinfo.id)}>Copy to my google calendar</a>
             </div>
           </div>
         </div>
