@@ -8,7 +8,9 @@ var AvailableClasses = React.createClass({
       return {class: [], studio: [], clicked: false}
     },
     // Figuring out how to get the click event to pop to top of modal instead of backing page
-  handleClick: function (id) {
+  handleClick: function (id, event) {
+    this.modalContainer.scrollTop = 0;
+    event.preventDefault();
     $.get("http://localhost:3001/yoga_classes/"+id)
     .done(function(data) {
       this.setState({class: data[0], studio: data[1], clicked: true})
@@ -19,7 +21,7 @@ var AvailableClasses = React.createClass({
 
     var me = this;
     return (
-      <div id={this.props.modalid} className="modal">
+      <div ref={(el) => {this.modalContainer = el}} id={this.props.modalid} className="modal">
         <div className="modal-content">
             <div className="row">
               <div className="col s4">

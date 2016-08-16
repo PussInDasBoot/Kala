@@ -20,6 +20,8 @@ var Show = React.createClass({
               }
               <p>Instructor: {this.props.classinfo.instructor_name}</p>
               <p>Drop in price: ${this.props.studio.drop_in_price}</p>
+              <p>Average per class price for passes: ${this.props.studio.pass_average}</p>
+              <p>Average per class price for memberships: ${this.props.studio.membership_average}</p>
             </div>
           </div>
         </div>

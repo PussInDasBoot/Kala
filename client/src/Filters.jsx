@@ -8,6 +8,7 @@ var Filters = React.createClass({
   },
   componentDidMount: function() {
     $('select').on("change", () => {this.handleChange()}).material_select();
+    $('.tooltipped').tooltip({delay: 50});
   },
   handleChange(e) {
     var commitmentvalue = (this.commitments.find(function (input){
@@ -29,28 +30,38 @@ var Filters = React.createClass({
   },
   handleFormSubmit (e) {
     e.preventDefault();
+    $("#filter-classes")[0].reset();
 
     this.props.onFilterSubmit(this.state);
   },
   render() {
     this.commitments = [];
     this.ratings = [];
+    var singleToolTip = "I want to filter classes by drop in price";
+    var passToolTip = "I want to filter on the average per-class price for 5-25 class passes";
+    var membershipToolTip = "I go at least twice a week and want to filter on the average per-class price for memberships";
     return (
       <form onSubmit={this.handleFormSubmit} id="filter-classes">
         <div className="row">
           <div className="col s6">
             <label>Choose a level of commitment:</label>
             <p>
-              <input ref={(el) => {this.commitments[0] = el;}} name="commitment" value="single" type="radio" id="commitment1" onClick={this.handleChange}/>
-              <label htmlFor="commitment1">Single</label>
+              <a className="tooltipped" data-position="right" data-delay="50" data-tooltip={singleToolTip}>
+                <input ref={(el) => {this.commitments[0] = el;}} name="commitment" value="single" type="radio" id="commitment1" onClick={this.handleChange}/>
+                <label htmlFor="commitment1">Single</label>
+              </a>
             </p>
             <p>
-              <input ref={(el) => {this.commitments[1] = el;}} name="commitment" value="pass" type="radio" id="commitment2" onClick={this.handleChange}/>
-              <label htmlFor="commitment2">Pass</label>
+              <a className="tooltipped" data-position="right" data-delay="50" data-tooltip={passToolTip}>
+                <input ref={(el) => {this.commitments[1] = el;}} name="commitment" value="pass" type="radio" id="commitment2" onClick={this.handleChange}/>
+                <label htmlFor="commitment2">Pass</label>
+              </a>
             </p>
             <p>
-              <input ref={(el) => {this.commitments[2] = el;}} name="commitment" value="membership" type="radio" id="commitment3" onClick={this.handleChange}/>
-              <label htmlFor="commitment3">Membership</label>
+              <a className="tooltipped" data-position="right" data-delay="50" data-tooltip={membershipToolTip}>
+                <input ref={(el) => {this.commitments[2] = el;}} name="commitment" value="membership" type="radio" id="commitment3" onClick={this.handleChange}/>
+                <label htmlFor="commitment3">Membership</label>
+              </a>
             </p>
           </div>
           
