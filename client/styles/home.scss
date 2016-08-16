@@ -36,9 +36,10 @@ p {
 }
 
 #map {
-  float: right;
-  height: 1100px;
+  height: 93%;
   margin-top: 50px;
+  position: fixed;
+  right: 0;
   width: 30%;
 }
 
@@ -95,6 +96,10 @@ span.kala {
   float: right;
 }
 
+.logout a {
+  color: black;
+}
+
 .logout:hover {
   background-color: #FAFAFA;
   border-bottom: 1px solid #CFD8DC;
@@ -116,10 +121,51 @@ span.kala {
   }
 }
 
+.col .module-col {
+  border-left: none;
+}
+
+.event-item {
+  border-radius: 2px;
+  padding-left: 7px;
+  text-align: left;
+}
+
+.mindbody-event {
+  background-color: #92E1C0;
+  border-radius: 5px;
+  height: 96px;
+  margin-bottom: 3px;
+  padding-left: 14px;
+  padding-top: 7px;
+  position: relative;
+}
+
+.mindbody-event-link {
+  bottom: 2px;
+  color: #26A69A;
+  font-family: Alegreya Sans;
+  font-size: 1.1em;
+  position: absolute;
+}
+
+.mindbody-event-link:hover {
+  text-decoration: underline;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+  color: #DF3A30;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+  color: #EF9A9A;
+}
+
+
+
 .google-event {
   background-color: #CFD8DC;
   border-bottom: 1px solid #FAFAFA;
-
 }
 
 .free-time {
@@ -142,18 +188,20 @@ span.kala {
     }
 }
 
-div.event-item {
-  border-radius: 2px;
-  padding-left: 7px;
-  text-align: left;
-}
-
 small.available-time {
   color: black;
 }
 
 small.event-time {
   font-weight: 700;
+}
+
+p.event-time-module {
+  font-weight: 700;
+}
+
+p.yoga-class-name {
+  font-size: 1.25em;
 }
 
 h6.num-available {

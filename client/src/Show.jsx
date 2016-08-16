@@ -8,9 +8,9 @@ var Show = React.createClass({
     console.log(this.props.studio.rating);
     return (
       <div className="row">
-        <div className="col s12 m12">
-          <div className="card blue-grey darken-1">
-            <div className="card-content white-text">
+        <div className="col s12 m12 module-col">
+          <div className="card">
+            <div className="card-content">
               <span className="card-title">{this.props.classinfo.name}</span>
               <p>{this.props.studio.name}</p>
               <p>{this.props.studio.address}</p>
@@ -22,6 +22,9 @@ var Show = React.createClass({
               <p>Drop in price: ${this.props.studio.drop_in_price}</p>
               <p>Average per class price for passes: ${this.props.studio.pass_average}</p>
               <p>Average per class price for memberships: ${this.props.studio.membership_average}</p>
+            </div>
+            <div className="card-action">
+              <a href="#">Copy to my google calendar</a>
             </div>
           </div>
         </div>
