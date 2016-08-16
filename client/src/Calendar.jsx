@@ -48,6 +48,7 @@ var Calendar = React.createClass({
       }
       dayColumns.push((
         <div className="col">
+          <p className="weekday-title">{moment().add(i,'day').format("ddd MM/DD")}</p>
           <Day eventsByDay={eventsByDay[weekdaysNumber] || []} yogaClasses={yogaClassesByDay[weekdaysNumber] || []}/>
         </div>
         ));
