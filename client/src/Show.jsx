@@ -7,9 +7,9 @@ var Show = React.createClass({
     event.preventDefault();
     $('#'+modalid).closeModal();
     $.get("http://localhost:3001/add_class_to_calendar/"+id)
-    .done(function(data) {
-    }.bind(this));
-    
+    .done(
+      () => this.props.onAddClass()
+      );
   },
   render() {
     var me = this;

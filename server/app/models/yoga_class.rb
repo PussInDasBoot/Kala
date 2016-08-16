@@ -7,7 +7,7 @@ class YogaClass < ApplicationRecord
     end_time = (start_time + 1.week).beginning_of_day
     yoga_classes = self.where('start_time >= ? AND end_time <= ?', start_time, end_time)
 
-    yoga_classes = yoga_classes.where('name ILIKE ?', "%#{class_name}%") unless self.invalid_form_field?(class_name)   
+    yoga_classes = yoga_classes.where('yoga_classes.name ILIKE ?', "%#{class_name}%") unless self.invalid_form_field?(class_name)   
     yoga_classes = yoga_classes.joins(:studio).where('studios.name = ?', studio_name) unless self.invalid_form_field?(studio_name)
     yoga_classes = yoga_classes.joins(:studio).where('studios.rating > ?', rating.to_f) unless self.invalid_form_field?(rating)
     yoga_classes = yoga_classes.joins(:studio).where('studios.location = ?', location) unless self.invalid_form_field?(location)

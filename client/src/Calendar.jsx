@@ -37,6 +37,7 @@ var Calendar = React.createClass({
     return splitByDayEvents;
   },
   render: function() {
+    var addClassFunction = this.props.onAddClass;
     var yogaClassesByDay = this.yogaClassesByDay(this.props.classes);
     var eventsByDay = this.splitByDay(this.props.google_events);
     var todayWeekday = moment().isoWeekday();
@@ -48,7 +49,7 @@ var Calendar = React.createClass({
       }
       dayColumns.push((
         <div className="col">
-          <Day eventsByDay={eventsByDay[weekdaysNumber] || []} yogaClasses={yogaClassesByDay[weekdaysNumber] || []}/>
+          <Day eventsByDay={eventsByDay[weekdaysNumber] || []} yogaClasses={yogaClassesByDay[weekdaysNumber] || []} onAddClass={addClassFunction}/>
         </div>
         ));
     }
