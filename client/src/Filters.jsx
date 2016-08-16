@@ -37,9 +37,9 @@ var Filters = React.createClass({
   render() {
     this.commitments = [];
     this.ratings = [];
-    var singleToolTip = "I want to filter classes by drop in price";
-    var passToolTip = "I want to filter on the average per-class price for 5-25 class passes";
-    var membershipToolTip = "I go at least twice a week and want to filter on the average per-class price for memberships";
+    var singleToolTip = "Filter by the drop in price.";
+    var passToolTip = "Filter by the average per class price for class passes that include 5 to 25 sessions.";
+    var membershipToolTip = "Filter by the average per class price for memberships based on twice per week frequency.";
     return (
       <form onSubmit={this.handleFormSubmit} id="filter-classes">
         <div className="row">
