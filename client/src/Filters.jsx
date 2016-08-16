@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 
 var Filters = React.createClass({
   getInitialState: function (){
-    return {commitment: "", price: "", class_name: "", studio_name: "", location: ""}
+    return {commitment: "", price: "", class_name: "", studio_name: "", location: "", rating: ""}
   },
   componentDidMount: function() {
     $('select').on("change", () => {this.handleChange()}).material_select();
@@ -30,6 +30,9 @@ var Filters = React.createClass({
   handleFormSubmit (e) {
     e.preventDefault();
     $("#filter-classes")[0].reset();
+    this.setState({
+      commitment: "", price: "", class_name: "", studio_name: "", location: "", rating: ""
+    })
     $("#max-price").css('visibility', 'hidden');
     this.setState({max_price: undefined});
     this.props.onFilterSubmit(this.state);

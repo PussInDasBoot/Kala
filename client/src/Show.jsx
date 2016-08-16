@@ -40,7 +40,7 @@ var Show = React.createClass({
               </div>
             </div>
             <div className="card-action">
-              <a href="#" onClick={me.handleClick.bind(this, this.props.classinfo.id)}>Copy to my google calendar</a>
+              <a href="#" onClick={me.handleClick.bind(this, this.props.classinfo.id, )}>Copy to my google calendar</a>
             </div>
           </div>
         </div>
