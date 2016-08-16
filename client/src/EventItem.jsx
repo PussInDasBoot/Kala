@@ -45,7 +45,7 @@ var EventItem = React.createClass({
                 <h6 className="num-available">{yoga_classes.length} Available</h6> 
               </div>
             </a>
-            <AvailableClasses modalid={ModalID} yoga_classes={yoga_classes} />
+            <AvailableClasses modalid={ModalID} yoga_classes={yoga_classes} onAddClass={this.props.onAddClass}/>
           </div>
           ))
       } 

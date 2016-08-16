@@ -3,12 +3,13 @@ import moment from 'moment';
 
 
 var Show = React.createClass({
-  handleClick: function (id, event) {
+  handleClick: function (id, modalid, event) {
     event.preventDefault();
+    $('#'+modalid).closeModal();
     $.get("http://localhost:3001/add_class_to_calendar/"+id)
-    .done(function(data) {
-    }.bind(this));
-    
+    .done(
+      () => this.props.onAddClass()
+      );
   },
   render() {
     var me = this;
@@ -40,7 +41,7 @@ var Show = React.createClass({
               </div>
             </div>
             <div className="card-action">
-              <a href="#" onClick={me.handleClick.bind(this, this.props.classinfo.id, )}>Copy to my google calendar</a>
+              <a href="#" onClick={me.handleClick.bind(this, this.props.classinfo.id, this.props.modalid)}>Copy to my google calendar</a>
             </div>
           </div>
         </div>

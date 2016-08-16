@@ -36,13 +36,14 @@ var Day = React.createClass({
   
   render() {
     var yogaClasses = this.props.yogaClasses;
+    var addClassFunction = this.props.onAddClass;
     // console.log("dayYogaClasses", this.props.yogaClasses);
     var freeEvents = this.freeEventsFinder(this.props.eventsByDay);
     return (
       <div>
         <p className="weekday">
         {freeEvents.map(function(event){
-          return <EventItem event={event} yogaClasses={yogaClasses} />
+          return <EventItem event={event} yogaClasses={yogaClasses} onAddClass={addClassFunction}/>
         })}</p>      
       </div>
     );

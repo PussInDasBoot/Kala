@@ -34,6 +34,17 @@ var App = React.createClass({
       this.setState({classes: data})
     }.bind(this));
   },
+  onAddClass: function () {
+    $.get("http://localhost:3001/classes_outside_busy_time")
+    .done(function(data) {
+      this.setState({classes: data})
+    }.bind(this));
+    $.get("http://localhost:3001/get_user_events")
+    .done(function(data) {
+      this.setState({google_events: data})
+    }.bind(this));
+  },
+  // isn't getting the updated google_events, perhaps need to set a time out?
 
   render() {
     return (
@@ -47,7 +58,7 @@ var App = React.createClass({
           <SimpleMap studios={this.state.studios}/>
         </div>
         <div id="calendar">
-          <Calendar google_events={this.state.google_events} classes={this.state.classes}/>
+          <Calendar google_events={this.state.google_events} classes={this.state.classes} onAddClass={this.onAddClass}/>
         </div>
         <div id="navbar">
           <Navbar profile={this.state.profile}/>
