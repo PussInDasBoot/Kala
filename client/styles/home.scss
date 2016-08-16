@@ -250,5 +250,20 @@ input#class-name.validate.valid {
   min-height: 50px 
 }
 
+li.collection-item {
+  text-align: left;
+}
 
+.price {
+  color: #5C6BC0;
+  padding-right: 1em;
+}
+
+.card .card-content p.studio {
+  text-align: left;
+}
+
+.card .card-content p.studio span.instructor {
+  float: right;
+}
 

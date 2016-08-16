@@ -11,17 +11,21 @@ var Show = React.createClass({
         <div className="col s12 m12 module-col">
           <div className="card">
             <div className="card-content">
-              <span className="card-title">{this.props.classinfo.name}</span>
-              <p>{this.props.studio.name}</p>
-              <p>{this.props.studio.address}</p>
-              <p>{this.props.studio.location}</p>
+              <p className="studio"><strong>{this.props.studio.name}</strong>
+              <span className="instructor">{this.props.classinfo.instructor_name}</span>
+              </p>
+              <p className="card-title">{this.props.classinfo.name}</p>
+        
+              <ul className="collection">
+                <li className="collection-item"><span className="price">${this.props.studio.drop_in_price} / class</span>Drop In</li>
+                <li className="collection-item"><span className="price">${this.props.studio.pass_average} / class</span>Average price for passes</li>
+                <li className="collection-item"><span className="price">${this.props.studio.membership_average} / class</span>Average price for memberships</li>
+              </ul>
+              
+              <p>{this.props.studio.address}</p>  
               {this.props.studio.rating &&
-              <p>Google+ rating: {this.props.studio.rating}</p>
-              }
-              <p>Instructor: {this.props.classinfo.instructor_name}</p>
-              <p>Drop in price: ${this.props.studio.drop_in_price}</p>
-              <p>Average per class price for passes: ${this.props.studio.pass_average}</p>
-              <p>Average per class price for memberships: ${this.props.studio.membership_average}</p>
+              <p className="rating">Google+ Rating: {this.props.studio.rating}</p>
+              } 
             </div>
             <div className="card-action">
               <a href="#">Copy to my google calendar</a>
