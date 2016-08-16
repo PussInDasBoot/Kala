@@ -15,8 +15,8 @@ var SimpleMap = React.createClass({
           }
           googleMapElement={
             <GoogleMap
-              defaultZoom={13}
-              defaultCenter={{ lat: 49.262852, lng: -123.116510 }}
+              defaultZoom={12}
+              defaultCenter={{ lat: 49.270974, lng: -123.139169 }}
               >
               { this.props.studios.map(function(studio) {
                 return <Marker key={studio.id} studio={studio}
