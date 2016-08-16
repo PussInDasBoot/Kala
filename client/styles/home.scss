@@ -21,9 +21,6 @@ p {
 #calendar {
 }
 
-/*#calendar-header {
-}*/
-
 .weekday-title {
   font-weight: 500;
   padding-bottom: 0.75em;
@@ -299,6 +296,19 @@ input#class-name.validate.valid {
   font-family: Alegreya Sans;
   font-weight: 500;
   letter-spacing: 0.25em;
+}
+
+.toast {
+  background-color: #FFF9C4;
+  color: #F39C12;
+  font-family: Alegreya Sans;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+#toast-container {
+  top: 11%;
+  right: 33%;
 }
 
 

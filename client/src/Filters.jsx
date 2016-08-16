@@ -36,6 +36,7 @@ var Filters = React.createClass({
     $("#max-price").css('visibility', 'hidden');
     this.setState({max_price: undefined});
     this.props.onFilterSubmit(this.state);
+    Materialize.toast('Filtered!', 4000, 'rounded toast') // 4000 is the duration of the toast
   },
   render() {
     this.commitments = [];
@@ -120,7 +121,7 @@ var Filters = React.createClass({
              </p>
           </div>
           
-          <input id="form-btn-text" className="waves-effect waves-light btn-flat form-btn" type="submit" label="Filter" />
+          <input id="form-btn-text" className="waves-effect waves-light btn-flat form-btn btn" type="submit" label="Filter" onclick="Materialize.toast('Filtered!', 4000, 'rounded toast')"/>
         </div>
      </form>
     );
