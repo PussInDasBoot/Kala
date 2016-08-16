@@ -22,7 +22,7 @@ var AvailableClasses = React.createClass({
     var me = this;
     return (
       <div ref={(el) => {this.modalContainer = el}} id={this.props.modalid} className="modal">
-        <div className="modal-content">
+        <div className="modal-content">{moment(this.props.yoga_classes[0].start_time).format("ddd MM/DD")}
             <div className="row">
               <div className="col s5 module-col">
                 {this.props.yoga_classes.map(function(yogaclass){

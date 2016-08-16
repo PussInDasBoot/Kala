@@ -29,7 +29,7 @@ var EventItem = React.createClass({
     var duration = end_time.diff(start_time, 'minutes');
 
     var style = {
-      height: duration/1.25
+      height: duration/1.05
     };
     var event = [];
     var starttime = moment(this.props.event.start).format("h:mm a");
@@ -53,7 +53,7 @@ var EventItem = React.createClass({
         event.push ((
           <div className="free-time-empty event-item" style={style}>
             <p><small className="event-time">{starttime}-{endtime}</small><br/>
-              {this.props.event.summary}</p>
+            </p>
           </div>
           ))
       } else {
