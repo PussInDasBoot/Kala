@@ -304,17 +304,33 @@ input#class-name.validate.valid {
   color: #F39C12;
   font-family: Alegreya Sans;
   font-weight: 500;
+  height: 38px;
   letter-spacing: 0.1em;
+  line-height: 38px;
+  min-height: 38px;
+  padding: 0 1.5em;
+  text-transform: uppercase;
 }
 
 #toast-container {
-  top: 11%;
-  right: 33%;
+  top: 10%;
+  right: 32%;
 }
 
-.material-tooltip .backdrop{
-  background-color: #26A69A;
-  border-radius: 50%;
+.backdrop {
+  background-color: white;
+}
+
+.material-tooltip  {
+  border-radius: 28px;
+  padding: 12px 18px;
+  border: 1px solid #CFD8DC;
+}
+
+.material-tooltip span {
+  color: black;
+  font-family: Alegreya Sans;
+  font-size: 1.1em;
 }
 
 
