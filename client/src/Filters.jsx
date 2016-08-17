@@ -105,7 +105,7 @@ var Filters = React.createClass({
           </div>
 
           <div className="col m6">
-            <label>Minimum Rating</label>
+            <label>Minimum Google+ Rating</label>
               <p>
               <input ref={(el) => {this.ratings[0] = el;}} onClick={this.handleChange} name="rating" value="1" type="radio" id="rating1" />
               <label className="radio" htmlFor="rating1">1</label>
