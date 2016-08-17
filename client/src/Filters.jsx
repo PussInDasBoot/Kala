@@ -36,7 +36,7 @@ var Filters = React.createClass({
     $("#max-price").css('visibility', 'hidden');
     this.setState({max_price: undefined});
     this.props.onFilterSubmit(this.state);
-    Materialize.toast('Filtered!', 4000, 'rounded toast') // 4000 is the duration of the toast
+    Materialize.toast('Filtered!', 4000, 'rounded toast');
   },
   render() {
     this.commitments = [];
@@ -70,12 +70,12 @@ var Filters = React.createClass({
           </div>
           
           <div className="col m6">
-            <p className="range-field">
-              <span id="max-price"style={{visibility: this.state.commitment ? "visible" : "hidden"}}>
-            <label>Maximum Price</label>
-              <input ref={(el) => {this.max_price = el}} type="range" id="price-slider" min="5" max="30" name="max_price" onChange={this.handleChange}/>
-              </span>
-            </p>
+            <span id="max-price"style={{visibility: this.state.commitment ? "visible" : "hidden"}}>
+              <p className="range-field">
+                <label>Maximum Price</label>
+                <input ref={(el) => {this.max_price = el}} type="range" id="price-slider" min="5" max="30" name="max_price" onChange={this.handleChange}/>  
+              </p>
+            </span>
           </div>
           <div className="input-field col m6">
             <input ref={(el) => {this.class_name = el}} name="class_name" id="class-name" type="text" className="validate" placeholder="Class Name" onChange={this.handleChange}/>
