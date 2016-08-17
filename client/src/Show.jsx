@@ -25,7 +25,7 @@ var Show = React.createClass({
               <p className="card-title">{this.props.classinfo.name}</p>
         
               <ul className="collection">
-                <li className="collection-item">Drop In: &nbsp;<span className="price">${this.props.studio.drop_in_price} / class</span></li>
+                <li className="collection-item">Drop In Price: &nbsp;<span className="price">${this.props.studio.drop_in_price} / class</span></li>
                 <li className="collection-item">Pass Average: &nbsp;<span className="price">${this.props.studio.pass_average} / class</span></li>
                 <li className="collection-item">Membership Average: &nbsp;<span className="price">${this.props.studio.membership_average} / class</span></li>
               </ul>

@@ -33,6 +33,10 @@ var App = React.createClass({
     $.get("http://localhost:3001/classes_outside_busy_time", filters).done(function(data) {
       this.setState({classes: data})
     }.bind(this));
+    $('html, body').animate({
+         scrollTop: $("#calendar").offset().top - $('#navbar').height()
+    }, 750);
+    return false;
   },
   onAddClass: function () {
     $.get("http://localhost:3001/classes_outside_busy_time")
@@ -57,7 +61,7 @@ var App = React.createClass({
         <div id="map">
           <SimpleMap studios={this.state.studios}/>
         </div>
-        <div id="calendar">
+        <div name="calendar" id="calendar">
           <Calendar google_events={this.state.google_events} classes={this.state.classes} onAddClass={this.onAddClass}/>
         </div>
         <div id="navbar">
