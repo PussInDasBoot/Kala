@@ -15,7 +15,7 @@ var Show = React.createClass({
     var me = this;
     return (
       <div className="row">
-        <div className="col s12 m12 module-col">
+        <div className="col s12 m12 modal-col">
           <div className="card">
             <div className="card-content">
               <p className="studio"><strong>{this.props.studio.name}</strong>

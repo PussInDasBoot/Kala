@@ -47,7 +47,7 @@ var Filters = React.createClass({
     return (
       <form onSubmit={this.handleFormSubmit} id="filter-classes">
         <div className="row">
-          <div className="col s12 m6">
+          <div className="col m6">
             <label>Choose a level of commitment:</label>
             <p>
               <a className="tooltipped" data-position="right" data-delay="50" data-customcss="yellow" data-tooltip={singleToolTip}>
@@ -69,7 +69,7 @@ var Filters = React.createClass({
             </p>
           </div>
           
-          <div className="col s12 m6">
+          <div className="col m6">
             <p className="range-field">
               <span id="max-price"style={{visibility: this.state.commitment ? "visible" : "hidden"}}>
             <label>Maximum Price</label>
@@ -77,12 +77,12 @@ var Filters = React.createClass({
               </span>
             </p>
           </div>
-          <div className="input-field col s12 m6">
+          <div className="input-field col m6">
             <input ref={(el) => {this.class_name = el}} name="class_name" id="class-name" type="text" className="validate" placeholder="Class Name" onChange={this.handleChange}/>
             <label htmlFor="class-name">Class Name</label>
           </div>
 
-          <div className="input-field col s12 m6">
+          <div className="input-field col m6">
             <select ref={(el) => {this.studio_name = el}} name="studio_name" form="filter-classes">
             <option value=""></option>
 
@@ -93,7 +93,7 @@ var Filters = React.createClass({
             <label>Select Studio</label>
           </div>
 
-          <div className="input-field col s12 m6">
+          <div className="input-field col m6">
             <select ref={(el) => {this.location = el}} name="location" form="filter-classes" onChange={this.handleChange}>
               <option value=""></option>
               <option value="Downtown Vancouver">Downtown Vancouver</option>
@@ -104,7 +104,7 @@ var Filters = React.createClass({
             <label>Select Location</label>
           </div>
 
-          <div className="col s12 m6">
+          <div className="col m6">
             <label>Minimum Rating</label>
               <p>
               <input ref={(el) => {this.ratings[0] = el;}} onClick={this.handleChange} name="rating" value="1" type="radio" id="rating1" />

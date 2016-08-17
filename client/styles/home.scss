@@ -1,11 +1,7 @@
+/* Kala Base Type */
+
 * {
   font-family: 'Roboto', sans-serif;
-}
-
-h5 {
-  font-family: Alegreya Sans;
-  font-size: 25px;
-  font-weight: 300;
 }
 
 p {
@@ -13,18 +9,15 @@ p {
   margin: 0;
 }
 
+
+/* Kala Grid */
+
 #calendar, #filters, #calendar-header {
   float: left;
   width: 70%;
 }
 
 #calendar {
-}
-
-.weekday-title {
-  font-weight: 500;
-  padding-bottom: 0.75em;
-  text-align: center;
 }
 
 #filters {
@@ -40,6 +33,9 @@ p {
   right: 0;
   width: 30%;
 }
+
+
+/* Navbar */
 
 #navbar {
   height: 50px;
@@ -69,11 +65,17 @@ p {
   border-radius: 0px;
 }
 
+h5 {
+  font-family: Alegreya Sans;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+
 span.kala {
   font-family: Alegreya Sans;
   font-weight: 500;
 }
-
 
 .profile-name {
   border-left: 1px solid #CFD8DC;
@@ -92,10 +94,12 @@ span.kala {
 .logout {
   border-left: 1px solid #CFD8DC;
   float: right;
+  padding: 0;
 }
 
 .logout a {
   color: black;
+  padding: 15px 25px;
 }
 
 .logout:hover {
@@ -103,7 +107,8 @@ span.kala {
   border-bottom: 1px solid #CFD8DC;
 }
 
-/* calendar stuff */
+
+/* Calendar */
 
 @media (min-width: 768px) {
   .row-7 {
@@ -119,9 +124,13 @@ span.kala {
   }
 }
 
-.col .module-col {
-  border-left: none;
+.weekday-title {
+  font-weight: 500;
+  padding-bottom: 0.75em;
+  text-align: center;
 }
+
+/* Applies to all events */
 
 .event-item {
   border-radius: 2px;
@@ -129,6 +138,12 @@ span.kala {
   text-align: left;
   overflow: hidden;
 }
+
+small.event-time {
+  font-weight: 700;
+}
+
+/* Applies to filter results only */
 
 .mindbody-event {
   background-color: #92E1C0;
@@ -152,13 +167,22 @@ span.kala {
   text-decoration: underline;
 }
 
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
-  color: #DF3A30;
+h6.num-available {
+  color: black;
+  font-family: Alegreya Sans;
+  font-size: 1.25em;
 }
 
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
-  color: #EF9A9A;
+p.explore-available {
+  color: black;
+  font-family: Alegreya Sans; 
 }
+
+small.available-time {
+  color: black;
+}
+
+/* Applies to calendar events */
 
 .google-event {
   background-color: #CFD8DC;
@@ -169,8 +193,6 @@ span.kala {
   background-color: #92E1C0;
   border-bottom: 1px solid #FAFAFA;
 }
-
-/*am I allowed to do this?*/
 
 .free-time:hover {
   background-color: #26A69A;
@@ -186,34 +208,17 @@ span.kala {
     }
 }
 
-small.available-time {
-  color: black;
-}
-
-small.event-time {
-  font-weight: 700;
-}
-
-p.event-time-module {
-  font-weight: 700;
+p.event-time-modal {
+  font-weight: 600;
 }
 
 p.yoga-class-name {
   font-size: 1.25em;
 }
 
-h6.num-available {
-  color: black;
-  font-family: Alegreya Sans;
-  font-size: 1.25em;
-}
 
-p.explore-available {
-  color: black;
-  font-family: Alegreya Sans; 
-}
+/* Filters */
 
-/* horrible form overriding stuff */
 form {
   padding: 1em;
 }
@@ -241,63 +246,14 @@ label.radio {
 
 input#class-name.validate.valid {
   border-bottom: 1px solid #92E1C0;
-  box-shadow: 0 1px 0 0 #92E1C0;;
+  box-shadow: 0 1px 0 0 #92E1C0;
 }
 
 .range-field {
   min-height: 50px 
 }
 
-/*li.collection-item {
-  text-align: left;
-}*/
-
-.price {
-  color: #5C6BC0;
-  padding-right: 1em;
-}
-
-.card .card-content p.card-time {
-  font-size: 1.25em;
-  margin-top: 2.25em; 
-}
-
-.card .card-content p.studio {
-  text-align: left;
-}
-
-.card .card-content p.studio span.instructor {
-  float: right;
-}
-
-.chip {
-  background-color: #FFF9C4;
-  margin-top: 12px;
-}
-
-.chip p.rating {
-  color: #F39C12;
-  font-weight: 400;
-}
-
-.chip-placeholder {
-  min-height: 49px;
-}
-
-.modal-close {
-  background-color: #D1C4E9;
-}
-
-.modal-close:hover, .modal-close:focus {
-  background-color: #B39DDB;
-}
-
-#modal-close-text {
-  color: white;
-  font-family: Alegreya Sans;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-}
+/* Tooltips and Toast (in Filter) */
 
 .toast {
   background-color: #FFF9C4;
@@ -334,3 +290,76 @@ input#class-name.validate.valid {
 }
 
 
+/* Modal */
+
+
+/* Applies to card content */
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+  color: #DF3A30;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+  color: #EF9A9A;
+}
+
+.card .card-content p.card-time {
+  font-size: 1.25em;
+  margin-top: 2.25em; 
+}
+
+.card .card-content p.studio {
+  text-align: left;
+}
+
+.card .card-content p.studio span.instructor {
+  float: right;
+}
+
+.chip {
+  background-color: #FFF9C4;
+  margin-top: 12px;
+}
+
+.chip p.rating {
+  color: #F39C12;
+  font-weight: 400;
+}
+
+.chip-placeholder {
+  min-height: 49px;
+}
+
+.price {
+  color: #5C6BC0;
+  padding-right: 1em;
+}
+
+.col .modal-col {
+  border-left: none;
+}
+
+/* Applies to modal */
+
+.modal-close {
+  background-color: #D1C4E9;
+  margin: 0;
+}
+
+.modal-close:hover, .modal-close:focus {
+  background-color: #B39DDB;
+}
+
+#modal-close-text {
+  color: white;
+  font-family: Alegreya Sans;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  margin: 0 0.5em;
+}
+
+.modal-date {
+  color: #9E9E9E;
+}
+
+/*That's all folks*/
