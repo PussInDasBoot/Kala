@@ -32,11 +32,10 @@ var App = React.createClass({
   onFilterSubmit: function (filters){
     $.get("http://localhost:3001/classes_outside_busy_time", filters).done(function(data) {
       this.setState({classes: data})
+      $('html, body').animate({
+       scrollTop: $("#calendar").offset().top - $('#navbar').height()
+      }, 900);
     }.bind(this));
-    $('html, body').animate({
-         scrollTop: $("#calendar").offset().top - $('#navbar').height()
-    }, 750);
-    return false;
   },
   onAddClass: function () {
     $.get("http://localhost:3001/classes_outside_busy_time")
