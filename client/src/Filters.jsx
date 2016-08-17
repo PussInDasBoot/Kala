@@ -108,6 +108,7 @@ var Filters = React.createClass({
                     <option value='East Vancouver'>East Vancouver</option>
                   </select>
                   <label>Select Location</label>
+                <input id="form-btn-text" className="waves-effect waves-light btn-flat form-btn btn" type="submit" label="Filter" onclick="Materialize.toast('Filtered!', 4000, 'rounded toast')"/>
                 </div>
 
                 <div className="col s12 m6">
@@ -127,7 +128,6 @@ var Filters = React.createClass({
                    </p>
                 </div>
                 
-                <input id="form-btn-text" className="waves-effect waves-light btn-flat form-btn btn" type="submit" label="Filter" onclick="Materialize.toast('Filtered!', 4000, 'rounded toast')"/>
               </div>
            </form>
          </div>
