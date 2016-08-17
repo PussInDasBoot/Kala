@@ -15,8 +15,11 @@ var SimpleMap = React.createClass({
           }
           googleMapElement={
             <GoogleMap
-              defaultZoom={13}
-              defaultCenter={{ lat: 49.262852, lng: -123.116510 }}
+              defaultZoom={12}
+              defaultCenter={{ lat: 49.260352, lng: -123.132445 }}
+              defaultOptions={{
+                 styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"administrative.country","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"administrative.country","elementType":"geometry.stroke","stylers":[{"visibility":"on"}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"lightness":"100"}]},{"featureType":"administrative.country","elementType":"labels.text.fill","stylers":[{"color":"#040404"}]},{"featureType":"administrative.country","elementType":"labels.text.stroke","stylers":[{"hue":"#ff0000"}]},{"featureType":"administrative.country","elementType":"labels.icon","stylers":[{"saturation":"83"},{"lightness":"100"}]},{"featureType":"administrative.land_parcel","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#c8e6e0"},{"visibility":"on"}]}]
+             }}
               >
               { this.props.studios.map(function(studio) {
                 return <Marker key={studio.id} studio={studio}

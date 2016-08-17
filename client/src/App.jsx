@@ -34,7 +34,7 @@ var App = React.createClass({
       this.setState({classes: data})
       $('html, body').animate({
        scrollTop: $("#calendar").offset().top - $('#navbar').height()
-      }, 900);
+      }, 500);
     }.bind(this));
   },
   onAddClass: function () {
